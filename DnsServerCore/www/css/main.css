@@ -39,6 +39,7 @@ th a {
     margin-bottom: -32px;
     box-shadow: 0px 1px 15px 0px #888888;
     width: 100%;
+    min-width: 320px;
 }
 
     #header .title {
@@ -78,6 +79,7 @@ th a {
     margin-right: auto;
     padding: 55px 15px 60px 15px;
     word-wrap: break-word;
+    min-width: 320px;
 }
 
     .container .pageLogin {
@@ -121,6 +123,7 @@ th a {
     clear: both;
     position: relative;
     height: 55px;
+    min-width: 320px;
 }
 
     #footer .content {
@@ -701,10 +704,10 @@ body.dark-mode {
         padding: 0 10px;
     }
 
-    /* Ensure alert placeholder is visible */
+    /* Ensure alert placeholder is visible on mobile with less padding for space optimization */
     .AlertPlaceholder {
         top: 40px;
-        width: calc(100% - 20px);
+        width: calc(100% - 20px); /* Less padding than desktop (40px) to maximize screen space */
     }
 }
 
