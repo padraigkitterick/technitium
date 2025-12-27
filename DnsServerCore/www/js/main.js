@@ -2896,39 +2896,31 @@ function toggleTheme() {
 
 function applyResponsiveLayout() {
     const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
+    const mainStylesheet = document.getElementById("main-stylesheet");
 
-    if (responsiveLayoutEnabled === "enabled") {
-        // Load responsive.css if not already loaded
-        if (!document.getElementById("responsive-stylesheet")) {
-            const link = document.createElement("link");
-            link.id = "responsive-stylesheet";
-            link.rel = "stylesheet";
-            link.href = "css/responsive.css";
-            document.head.appendChild(link);
-        }
-    } else {
-        // Remove responsive.css if loaded
-        const existingLink = document.getElementById("responsive-stylesheet");
-        if (existingLink) {
-            existingLink.remove();
+    if (mainStylesheet) {
+        if (responsiveLayoutEnabled === "enabled") {
+            // Switch to responsive.css
+            mainStylesheet.href = "css/responsive.css";
+        } else {
+            // Switch to main.css
+            mainStylesheet.href = "css/main.css";
         }
     }
 }
 
 function toggleResponsiveLayout() {
-    const existingLink = document.getElementById("responsive-stylesheet");
+    const mainStylesheet = document.getElementById("main-stylesheet");
     
-    if (existingLink) {
-        // Responsive layout is currently enabled, disable it
-        existingLink.remove();
-        localStorage.setItem("responsiveLayout", "disabled");
-    } else {
-        // Responsive layout is currently disabled, enable it
-        const link = document.createElement("link");
-        link.id = "responsive-stylesheet";
-        link.rel = "stylesheet";
-        link.href = "css/responsive.css";
-        document.head.appendChild(link);
-        localStorage.setItem("responsiveLayout", "enabled");
+    if (mainStylesheet) {
+        if (mainStylesheet.href.endsWith("responsive.css")) {
+            // Currently using responsive layout, switch to main
+            mainStylesheet.href = "css/main.css";
+            localStorage.setItem("responsiveLayout", "disabled");
+        } else {
+            // Currently using main layout, switch to responsive
+            mainStylesheet.href = "css/responsive.css";
+            localStorage.setItem("responsiveLayout", "enabled");
+        }
     }
 }
