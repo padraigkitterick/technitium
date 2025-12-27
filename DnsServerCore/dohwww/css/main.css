@@ -30,9 +30,8 @@ a {
     .container .pageLogin {
         display: none;
         margin: auto;
-        max-width: 500px;
-        width: 100%;
-        padding: 150px 15px 0 15px;
+        width: 500px;
+        padding: 150px 0 0 0;
     }
 
     .container .page {
@@ -42,7 +41,6 @@ a {
 .features {
     margin: 80px auto 40px auto;
     font-family: Arial;
-    padding: 0 15px;
 }
 
     .features .pull-left {
@@ -95,60 +93,73 @@ a {
     }
 }
 
-/* Responsive Design - Mobile & Tablet Support */
+/* Responsive Layout - Opt-in via .responsive-layout class */
 
-/* Small screens (mobile phones) */
+/* Core responsive adjustments - only apply when .responsive-layout is enabled */
+.responsive-layout .container .pageLogin {
+    max-width: 500px;
+    width: 100%;
+    padding: 150px 15px 0 15px;
+}
+
+.responsive-layout .features {
+    padding: 0 15px;
+}
+
+/* Mobile responsive styles (<768px) - only when .responsive-layout is enabled */
 @media (max-width: 767px) {
-    .container {
+    .responsive-layout .container {
         padding: 40px 10px 40px 10px;
     }
 
-    .container .pageLogin {
+    .responsive-layout .container .pageLogin {
         padding: 80px 10px 0 10px;
     }
 
-    .features {
+    .responsive-layout .features {
         margin: 40px auto 20px auto;
         padding: 0 10px;
     }
 
-    .features h1 {
+    .responsive-layout .features h1 {
         font-size: 24px;
     }
 
-    .features h3 {
+    .responsive-layout .features h3 {
         font-size: 18px;
         margin-top: 30px !important;
     }
 
-    .features p {
+    .responsive-layout .features p {
         font-size: 14px;
     }
 
-    .features .pull-left,
-    .features .pull-right {
+    .responsive-layout .features .pull-left,
+    .responsive-layout .features .pull-right {
         width: 100%;
         float: none;
     }
 }
 
-/* Medium screens (tablets) */
+/* Tablet responsive styles (768-991px) - only when .responsive-layout is enabled */
 @media (min-width: 768px) and (max-width: 991px) {
-    #header .title, .container, #footer .content {
+    .responsive-layout #header .title,
+    .responsive-layout .container,
+    .responsive-layout #footer .content {
         width: 100%;
         max-width: 750px;
     }
 
-    .container {
+    .responsive-layout .container {
         padding: 50px 15px 50px 15px;
     }
 
-    .features {
+    .responsive-layout .features {
         margin: 60px auto 30px auto;
     }
 
-    .features .pull-left,
-    .features .pull-right {
+    .responsive-layout .features .pull-left,
+    .responsive-layout .features .pull-right {
         width: 100%;
         float: none;
     }
