@@ -726,7 +726,7 @@ body.dark-mode {
         padding: 0 10px;
     }
 
-    /* Alert placeholder - less padding on mobile for space optimization */
+    /* Alert placeholder - less padding on mobile (20px vs 40px desktop) to maximize screen space */
     .responsive-layout .AlertPlaceholder {
         top: 40px;
         width: calc(100% - 20px);
