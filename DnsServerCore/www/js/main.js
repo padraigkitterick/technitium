@@ -2897,16 +2897,38 @@ function toggleTheme() {
 function applyResponsiveLayout() {
     const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
 
-    if (responsiveLayoutEnabled === "enabled")
-        document.body.classList.add("responsive-layout");
-    else
-        document.body.classList.remove("responsive-layout");
+    if (responsiveLayoutEnabled === "enabled") {
+        // Load responsive.css if not already loaded
+        if (!document.getElementById("responsive-stylesheet")) {
+            const link = document.createElement("link");
+            link.id = "responsive-stylesheet";
+            link.rel = "stylesheet";
+            link.href = "css/responsive.css";
+            document.head.appendChild(link);
+        }
+    } else {
+        // Remove responsive.css if loaded
+        const existingLink = document.getElementById("responsive-stylesheet");
+        if (existingLink) {
+            existingLink.remove();
+        }
+    }
 }
 
 function toggleResponsiveLayout() {
-    document.body.classList.toggle("responsive-layout");
-
-    const responsiveLayout = document.body.classList.contains("responsive-layout") ? "enabled" : "disabled";
-
-    localStorage.setItem("responsiveLayout", responsiveLayout);
+    const existingLink = document.getElementById("responsive-stylesheet");
+    
+    if (existingLink) {
+        // Responsive layout is currently enabled, disable it
+        existingLink.remove();
+        localStorage.setItem("responsiveLayout", "disabled");
+    } else {
+        // Responsive layout is currently disabled, enable it
+        const link = document.createElement("link");
+        link.id = "responsive-stylesheet";
+        link.rel = "stylesheet";
+        link.href = "css/responsive.css";
+        document.head.appendChild(link);
+        localStorage.setItem("responsiveLayout", "enabled");
+    }
 }
