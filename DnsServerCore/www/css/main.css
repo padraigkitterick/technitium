@@ -148,13 +148,13 @@ th a {
         width: 970px;
     }
     .nav > li > a {
-	padding: 6px 10px;
+        padding: 6px 10px;
     }
     .stats-panel .stats-item .title {
         font-size: 11px !important;
     }
     .stats-panel .stats-item {
-	padding-right: 2px !important;
+        padding-right: 2px !important;
     }
 }
 
@@ -290,7 +290,7 @@ th a {
         float: left;
         padding: 4px;
         margin-right: 0.3%;
-	height: 100%;
+        height: 100%;
     }
 
         .stats-panel .stats-item .number {
@@ -650,7 +650,7 @@ body.dark-mode {
     }
 
     .responsive-layout .nav > li > a {
-	padding: 5px 8px !important;
+        padding: 5px 8px !important;
     }
 
     /* Make zone panes stack vertically on mobile */
@@ -761,7 +761,7 @@ body.dark-mode {
     }
 
     .nav > li > a {
-	padding: 5px 8px;
+        padding: 5px 8px;
     }
 
     /* Zone panes - side by side on tablets */
@@ -785,7 +785,7 @@ body.dark-mode {
     /* Stats panels - adjust sizing */
     .responsive-layout .stats-panel .stats-item {
         width: 16.416%;
-	margin-bottom: 0.3%;
+        margin-bottom: 0.3%;
     }
 
     .responsive-layout .stats-panel .stats-item:nth-child(6) {
