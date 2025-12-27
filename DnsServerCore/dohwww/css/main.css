@@ -92,3 +92,75 @@ a {
         padding: 6px !important;
     }
 }
+
+/* Responsive Layout - Opt-in via .responsive-layout class */
+
+/* Core responsive adjustments - only apply when .responsive-layout is enabled */
+.responsive-layout .container .pageLogin {
+    max-width: 500px;
+    width: 100%;
+    padding: 150px 15px 0 15px;
+}
+
+.responsive-layout .features {
+    padding: 0 15px;
+}
+
+/* Mobile responsive styles (<768px) - only when .responsive-layout is enabled */
+@media (max-width: 767px) {
+    .responsive-layout .container {
+        padding: 40px 10px 40px 10px;
+    }
+
+    .responsive-layout .container .pageLogin {
+        padding: 80px 10px 0 10px;
+    }
+
+    .responsive-layout .features {
+        margin: 40px auto 20px auto;
+        padding: 0 10px;
+    }
+
+    .responsive-layout .features h1 {
+        font-size: 24px;
+    }
+
+    .responsive-layout .features h3 {
+        font-size: 18px;
+        margin-top: 30px !important;
+    }
+
+    .responsive-layout .features p {
+        font-size: 14px;
+    }
+
+    .responsive-layout .features .pull-left,
+    .responsive-layout .features .pull-right {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* Tablet responsive styles (768-991px) - only when .responsive-layout is enabled */
+@media (min-width: 768px) and (max-width: 991px) {
+    .responsive-layout #header .title,
+    .responsive-layout .container,
+    .responsive-layout #footer .content {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .responsive-layout .container {
+        padding: 50px 15px 50px 15px;
+    }
+
+    .responsive-layout .features {
+        margin: 60px auto 30px auto;
+    }
+
+    .responsive-layout .features .pull-left,
+    .responsive-layout .features .pull-right {
+        width: 100%;
+        float: none;
+    }
+}
