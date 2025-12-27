@@ -552,6 +552,7 @@ $(function () {
     });
 
     applyTheme();
+    applyResponsiveLayout();
 });
 
 function showAbout() {
@@ -2891,4 +2892,24 @@ function toggleTheme() {
         window.chartDashboardPie2.update();
         window.chartDashboardPie3.update();
     }
+}
+
+function applyResponsiveLayout() {
+    const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
+
+    if (responsiveLayoutEnabled === "enabled")
+        document.body.classList.add("responsive-layout");
+    else
+        document.body.classList.remove("responsive-layout");
+}
+
+function toggleResponsiveLayout() {
+    document.body.classList.toggle("responsive-layout");
+
+    let responsiveLayout = "disabled";
+
+    if (document.body.classList.contains("responsive-layout"))
+        responsiveLayout = "enabled";
+
+    localStorage.setItem("responsiveLayout", responsiveLayout);
 }
