@@ -143,9 +143,18 @@ th a {
                 color: #6699ff;
             }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     #header .title, .container, #footer .content {
         width: 970px;
+    }
+    .nav > li > a {
+	padding: 6px 10px;
+    }
+    .stats-panel .stats-item .title {
+        font-size: 11px !important;
+    }
+    .stats-panel .stats-item {
+	padding-right: 2px !important;
     }
 }
 
@@ -281,6 +290,7 @@ th a {
         float: left;
         padding: 4px;
         margin-right: 0.3%;
+	height: 100%;
     }
 
         .stats-panel .stats-item .number {
@@ -639,6 +649,10 @@ body.dark-mode {
         padding: 80px 10px 0 10px;
     }
 
+    .responsive-layout .nav > li > a {
+	padding: 5px 8px !important;
+    }
+
     /* Make zone panes stack vertically on mobile */
     .responsive-layout .zone-list-pane {
         float: none;
@@ -746,6 +760,10 @@ body.dark-mode {
         padding: 50px 15px 60px 15px;
     }
 
+    .nav > li > a {
+	padding: 5px 8px;
+    }
+
     /* Zone panes - side by side on tablets */
     .responsive-layout .zone-list-pane {
         width: 30%;
@@ -766,8 +784,12 @@ body.dark-mode {
 
     /* Stats panels - adjust sizing */
     .responsive-layout .stats-panel .stats-item {
-        width: 19%;
-        margin-right: 0.5%;
+        width: 16.416%;
+	margin-bottom: 0.3%;
+    }
+
+    .responsive-layout .stats-panel .stats-item:nth-child(6) {
+        margin-right: 0;
     }
 
     .responsive-layout .stats-panel .stats-item .number {
@@ -779,7 +801,12 @@ body.dark-mode {
     }
 
     .responsive-layout .zone-stats-panel .stats-item {
-        width: 32%;
-        margin-right: 1.5%;
+        width: 32.9%;
+        margin-bottom: 0.65%;
     }
+
+    .responsive-layout .zone-stats-panel .stats-item:nth-child(3) {
+        margin-right: 0;
+    }
+
 }
