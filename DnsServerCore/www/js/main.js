@@ -2906,10 +2906,7 @@ function applyResponsiveLayout() {
 function toggleResponsiveLayout() {
     document.body.classList.toggle("responsive-layout");
 
-    let responsiveLayout = "disabled";
-
-    if (document.body.classList.contains("responsive-layout"))
-        responsiveLayout = "enabled";
+    const responsiveLayout = document.body.classList.contains("responsive-layout") ? "enabled" : "disabled";
 
     localStorage.setItem("responsiveLayout", responsiveLayout);
 }
