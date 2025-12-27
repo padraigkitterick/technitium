@@ -30,8 +30,9 @@ a {
     .container .pageLogin {
         display: none;
         margin: auto;
-        width: 500px;
-        padding: 150px 0 0 0;
+        max-width: 500px;
+        width: 100%;
+        padding: 150px 15px 0 15px;
     }
 
     .container .page {
@@ -41,6 +42,7 @@ a {
 .features {
     margin: 80px auto 40px auto;
     font-family: Arial;
+    padding: 0 15px;
 }
 
     .features .pull-left {
@@ -90,5 +92,64 @@ a {
 
     .stats-panel .stats-item {
         padding: 6px !important;
+    }
+}
+
+/* Responsive Design - Mobile & Tablet Support */
+
+/* Small screens (mobile phones) */
+@media (max-width: 767px) {
+    .container {
+        padding: 40px 10px 40px 10px;
+    }
+
+    .container .pageLogin {
+        padding: 80px 10px 0 10px;
+    }
+
+    .features {
+        margin: 40px auto 20px auto;
+        padding: 0 10px;
+    }
+
+    .features h1 {
+        font-size: 24px;
+    }
+
+    .features h3 {
+        font-size: 18px;
+        margin-top: 30px !important;
+    }
+
+    .features p {
+        font-size: 14px;
+    }
+
+    .features .pull-left,
+    .features .pull-right {
+        width: 100%;
+        float: none;
+    }
+}
+
+/* Medium screens (tablets) */
+@media (min-width: 768px) and (max-width: 991px) {
+    #header .title, .container, #footer .content {
+        width: 100%;
+        max-width: 750px;
+    }
+
+    .container {
+        padding: 50px 15px 50px 15px;
+    }
+
+    .features {
+        margin: 60px auto 30px auto;
+    }
+
+    .features .pull-left,
+    .features .pull-right {
+        width: 100%;
+        float: none;
     }
 }
