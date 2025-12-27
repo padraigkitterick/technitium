@@ -655,11 +655,11 @@ body.dark-mode {
     }
 
     .stats-panel .stats-item .title {
-        font-size: 10px;
+        font-size: 11px;
     }
 
     .stats-panel .stats-item .percentage {
-        font-size: 9px;
+        font-size: 10px;
     }
 
     /* Make zone stats panels responsive */
@@ -697,7 +697,7 @@ body.dark-mode {
 
     /* Adjust footer */
     #footer .content {
-        font-size: 10px;
+        font-size: 11px;
         padding: 0 10px;
     }
 
@@ -748,7 +748,7 @@ body.dark-mode {
     }
 
     .stats-panel .stats-item .title {
-        font-size: 11px;
+        font-size: 12px;
     }
 
     .zone-stats-panel .stats-item {
