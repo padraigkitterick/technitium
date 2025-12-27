@@ -745,6 +745,16 @@ body.dark-mode {
         top: 40px;
         width: calc(100% - 20px);
     }
+
+    .responsive-layout div#divDashboard > div:nth-child(4) > div:nth-child(1) {
+        width: 100% !important;
+        padding-right: 0px !important;
+    }
+    .responsive-layout div#divDashboard > div:nth-child(4) > div:nth-child(2) {
+        width: 100% !important;
+        padding-left: 0px !important;
+        margin-top: 15px !important;
+    }
 }
 
 /* Tablet responsive styles (768-991px) - only when .responsive-layout is enabled */
