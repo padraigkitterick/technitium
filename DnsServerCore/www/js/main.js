@@ -2870,11 +2870,10 @@ function restoreSettings() {
 function applyTheme() {
     const currentTheme = localStorage.getItem("theme");
 
-    if (currentTheme === "dark") {
+    if (currentTheme === "dark")
         document.body.classList.add("dark-mode");
-    } else {
+    else
         document.body.classList.remove("dark-mode");
-    }
 }
 
 function toggleTheme() {
