@@ -37,7 +37,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
     <script src="js/moment.min.js"></script>
 
-    <link id="main-stylesheet" href="css/main.css" rel="stylesheet" />
+    <link href="css/main.css" rel="stylesheet" />
+    <link href="css/responsive.css" rel="stylesheet" />
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <script src="js/auth.js"></script>
@@ -64,8 +65,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <li><a href="#" onclick="showCreateMyApiTokenModal(); return false;">Create API Token</a></li>
                 <li><a href="#" onclick="showChangePasswordModal(); return false;">Change Password</a></li>
                 <li><a href="#" onclick="showConfigure2FAModal(); return false;">Configure 2FA</a></li>
-                <li id="dropdown-menu-theme"><a href="#" onclick="toggleTheme(); return false;">Toggle Dark Mode</a></li>
-                <li id="dropdown-menu-responsive"><a href="#" onclick="toggleResponsiveLayout(); return false;">Toggle Responsive Layout</a></li>
+                <li><a href="#" onclick="toggleTheme(); return false;">Toggle Dark Mode</a></li>
                 <li role="separator" class="divider"></li>
                 <li><a href="#" onclick="logout(); return false;">Logout</a></li>
             </ul>

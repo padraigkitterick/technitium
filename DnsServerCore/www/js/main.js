@@ -22,25 +22,6 @@ var reverseProxyDetected = false;
 var quickBlockLists = null;
 var quickForwardersList = null;
 
-function showLoggedOutSettingsDropdown() {
-    $("#mnuUserDisplayName").text("");
-
-    document.body.classList.add("loggedout");
-
-    const mnu = document.getElementsByClassName("menu-title")[0];
-    mnu.children[0].classList.remove("glyphicon-user");
-    mnu.children[0].classList.add("glyphicon-cog");
-}
-
-function hideLoggedOutSettingsDropdown() {
-    document.body.classList.remove("loggedout");
-
-    const mnu = document.getElementsByClassName("menu-title")[0];
-
-    mnu.children[0].classList.remove("glyphicon-cog");
-    mnu.children[0].classList.add("glyphicon-user");
-}
-
 function showPageLogin() {
     hideAlert();
 
@@ -48,8 +29,6 @@ function showPageLogin() {
 
     $("#pageMain").hide();
     $("#mnuUser").hide();
-
-    showLoggedOutSettingsDropdown();
 
     $("#txtUser").val("");
     $("#txtPass").val("");
@@ -72,8 +51,6 @@ function showPageMain() {
 
     $("#pageLogin").hide();
     $("#mnuUser").show();
-
-    hideLoggedOutSettingsDropdown();
 
     $(".nav-tabs li").removeClass("active");
     $(".tab-pane").removeClass("active");
@@ -575,7 +552,6 @@ $(function () {
     });
 
     applyTheme();
-    applyResponsiveLayout();
 });
 
 function showAbout() {
@@ -2917,37 +2893,4 @@ function toggleTheme() {
         window.chartDashboardPie2.update();
         window.chartDashboardPie3.update();
     }
-}
-
-function applyResponsiveLayout() {
-    const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
-    const mainStylesheet = document.getElementById("main-stylesheet");
-    const menuItem = document.getElementById("dropdown-menu-responsive");
-
-    if (mainStylesheet) {
-        if (responsiveLayoutEnabled === "enabled") {
-            // Switch to responsive.css
-            mainStylesheet.href = "css/responsive.css";
-            menuItem.children[0].text = "Disable Responsive Layout";
-        } else {
-            // Switch to main.css
-            mainStylesheet.href = "css/main.css";
-            menuItem.children[0].text = "Enable Responsive Layout";
-        }
-    }
-}
-
-function toggleResponsiveLayout() {
-    const mainStylesheet = document.getElementById("main-stylesheet");
-    
-    if (mainStylesheet) {
-        if (mainStylesheet.href.endsWith("responsive.css")) {
-            // Currently using responsive layout, switch to main
-            localStorage.setItem("responsiveLayout", "disabled");
-        } else {
-            // Currently using main layout, switch to responsive
-            localStorage.setItem("responsiveLayout", "enabled");
-        }
-    }
-    location.reload();
 }
