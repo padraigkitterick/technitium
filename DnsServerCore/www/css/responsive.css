@@ -143,9 +143,18 @@ th a {
                 color: #6699ff;
             }
 
-@media (min-width: 992px) {
+@media (min-width: 992px) and (max-width: 1199px) {
     #header .title, .container, #footer .content {
         width: 970px;
+    }
+    .nav > li > a {
+        padding: 6px 10px;
+    }
+    .stats-panel .stats-item .title {
+        font-size: 11px !important;
+    }
+    .stats-panel .stats-item {
+        padding-right: 2px !important;
     }
 }
 
@@ -281,6 +290,7 @@ th a {
         float: left;
         padding: 4px;
         margin-right: 0.3%;
+        height: 100%;
     }
 
         .stats-panel .stats-item .number {
@@ -586,6 +596,7 @@ body.dark-mode {
     .dark-mode #txtQueryLogEnd::-webkit-calendar-picker-indicator {
         filter: invert(1);
     }
+
 /* Responsive Layout - Loaded dynamically when responsive mode is enabled */
 
 /* Core responsive adjustments */
