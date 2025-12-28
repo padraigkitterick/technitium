@@ -175,19 +175,40 @@ div#divDashboard > div:nth-child(2) {
             text-align: left;
         }
     }
+
     table#tableZones > tbody > tr> td:nth-child(2) {
         max-width: 100% !important;
     }
 
     /* Adjust form controls */
-    .form-inline .form-group {
+    div#mainPanelTabPaneDnsClient .form-inline .form-group {
         display: block;
         width: 100%;
+        margin-right: 0px;
         margin-bottom: 10px;
     }
-
-    .form-inline .form-control {
+    div#mainPanelTabPaneDnsClient .form-inline .form-control {
         width: 100%;
+    }
+    input#txtDnsClientNameServer {
+        min-width: 205px !important;
+    }
+    input#txtDnsClientDomain {
+        min-width: 240px !important;
+    }
+
+    div#divViewZones .form-inline .form-group {
+        display: inline-block;
+        vertical-align: middle;
+    }
+    div#divViewZones .form-inline .form-control {
+        display: inline-block;
+        width: auto;
+        vertical-align: middle;
+    }
+    input#txtZonesEdit {
+        width: auto !important;
+        max-width: 300px;
     }
 
     /* Make dropdowns responsive */
@@ -235,6 +256,11 @@ div#divDashboard > div:nth-child(2) {
         margin-top: 15px !important;
     }
 
+    div#lstCachedZones, div#lstAllowedZones, div#lstBlockedZones {
+       max-height: 20vh;
+       overflow: scroll;
+    }
+
     .dropdown-menu {
         margin-left: -80px;
     }
@@ -247,6 +273,15 @@ div#divDashboard > div:nth-child(2) {
         width: 80vw !important;
 	margin: 30px auto;
     }
+
+    div#divAllowedZoneViewer > div > div.panel-heading {
+        height: auto !important;
+    }
+    div#divBlockedZoneViewer > div > div.panel-heading {
+        height: auto !important;
+    }
+
+
 }
 
 /* Tablet responsive styles (768-991px) */
