@@ -729,10 +729,40 @@ div#divDashboard > div:nth-child(2) {
         margin-right: 0;
     }
 
-    /* Make tables scrollable horizontally */
-    .table-responsive {
-        overflow-x: auto;
-        -webkit-overflow-scrolling: touch;
+    /* Make specific tables flow row contents vertically */
+    div#divViewZones, div#divMyProfileViewer {
+        table, thead, tbody, th, td, tfoot {
+            display: block;
+            width: 100%;
+        }
+        thead {
+            display: none;
+        }
+        tr {
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            display: block;
+        }
+        td {
+            border: none;
+            border-bottom: 1px solid #eee;
+            position: relative;
+            padding-left: 50%; /* Space for label */
+            text-align: right;
+        }
+        td::before {
+            display: inline-table;
+            content: attr(data-label);
+            position: absolute;
+            left: 10px;
+            width: 45%;
+            padding-left: 10px;
+            font-weight: bold;
+            text-align: left;
+        }
+    }
+    table#tableZones > tbody > tr> td:nth-child(2) {
+        max-width: 100% !important;
     }
 
     /* Adjust form controls */
@@ -793,6 +823,15 @@ div#divDashboard > div:nth-child(2) {
 
     .dropdown-menu {
         margin-left: -80px;
+    }
+}
+
+/* For tablet sizes and below, switch dialogs to relative width */
+@media (max-width: 991px) {
+    /* Use width relative to viewport and keep centred */
+    .modal-dialog {
+        width: 80vw !important;
+	margin: 30px auto;
     }
 }
 

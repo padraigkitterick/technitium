@@ -710,7 +710,7 @@ function refreshZones(checkDisplay, pageNumber) {
                 if (soaSerial == null)
                     soaSerial = "&nbsp;";
 
-                var dnssecStatus = "";
+                var dnssecStatus = "&nbsp;";
 
                 switch (zones[i].dnssecStatus) {
                     case "SignedWithNSEC":
@@ -809,16 +809,16 @@ function refreshZones(checkDisplay, pageNumber) {
                 tableHtmlRows += "<tr id=\"trZone" + id + "\"><td>" + (firstRowNumber + i) + "</td>";
 
                 if (zones[i].nameIdn == null)
-                    tableHtmlRows += "<td style=\"word-break: break-word; max-width: 390px;\"><a href=\"#\" style=\"font-weight: bold;\" onclick=\"showEditZone('" + name + "'); return false;\">" + htmlEncode(name === "." ? "<root>" : name) + "</a>" + nameTags + "</td>";
+                    tableHtmlRows += "<td data-label=\"Zone\" style=\"word-break: break-word; max-width: 390px;\"><a href=\"#\" style=\"font-weight: bold;\" onclick=\"showEditZone('" + name + "'); return false;\">" + htmlEncode(name === "." ? "<root>" : name) + "</a>" + nameTags + "</td>";
                 else
-                    tableHtmlRows += "<td style=\"word-break: break-word; max-width: 390px;\"><a href=\"#\" style=\"font-weight: bold;\" onclick=\"showEditZone('" + name + "'); return false;\">" + htmlEncode(zones[i].nameIdn + " (" + name + ")") + "</a>" + nameTags + "</td>";
+                    tableHtmlRows += "<td data-label=\"Zone\" style=\"word-break: break-word; max-width: 390px;\"><a href=\"#\" style=\"font-weight: bold;\" onclick=\"showEditZone('" + name + "'); return false;\">" + htmlEncode(zones[i].nameIdn + " (" + name + ")") + "</a>" + nameTags + "</td>";
 
-                tableHtmlRows += "<td>" + type + "</td>";
-                tableHtmlRows += "<td>" + dnssecStatus + "</td>";
-                tableHtmlRows += "<td>" + status + "</td>";
-                tableHtmlRows += "<td>" + soaSerial + "</td>";
-                tableHtmlRows += "<td>" + expiry + "</td>";
-                tableHtmlRows += "<td>" + lastModified + "</td>";
+                tableHtmlRows += "<td data-label=\"Type\">" + type + "</td>";
+                tableHtmlRows += "<td data-label=\"DNSSEC\">" + dnssecStatus + "</td>";
+                tableHtmlRows += "<td data-label=\"Status\">" + status + "</td>";
+                tableHtmlRows += "<td data-label=\"Serial\">" + soaSerial + "</td>";
+                tableHtmlRows += "<td data-label=\"Expiry\">" + expiry + "</td>";
+                tableHtmlRows += "<td data-label=\"Last Modified\">" + lastModified + "</td>";
 
                 tableHtmlRows += "<td align=\"right\"><div class=\"dropdown\"><a href=\"#\" id=\"btnZoneRowOption" + id + "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\"><span class=\"glyphicon glyphicon-option-vertical\" aria-hidden=\"true\"></span></a><ul class=\"dropdown-menu dropdown-menu-right\">";
                 tableHtmlRows += "<li><a href=\"#\" onclick=\"showEditZone('" + name + "'); return false;\">" + (isReadOnlyZone ? "View" : "Edit") + " Zone</a></li>";
