@@ -2896,17 +2896,31 @@ function toggleTheme() {
 
 function applyResponsiveLayout() {
     const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
+    const mainStylesheet = document.getElementById("main-stylesheet");
 
-    if (responsiveLayoutEnabled === "enabled")
-        document.body.classList.add("responsive-layout");
-    else
-        document.body.classList.remove("responsive-layout");
+    if (mainStylesheet) {
+        if (responsiveLayoutEnabled === "enabled") {
+            // Switch to responsive.css
+            mainStylesheet.href = "css/responsive.css";
+        } else {
+            // Switch to main.css
+            mainStylesheet.href = "css/main.css";
+        }
+    }
 }
 
 function toggleResponsiveLayout() {
-    document.body.classList.toggle("responsive-layout");
-
-    const responsiveLayout = document.body.classList.contains("responsive-layout") ? "enabled" : "disabled";
-
-    localStorage.setItem("responsiveLayout", responsiveLayout);
+    const mainStylesheet = document.getElementById("main-stylesheet");
+    
+    if (mainStylesheet) {
+        if (mainStylesheet.href.endsWith("responsive.css")) {
+            // Currently using responsive layout, switch to main
+            mainStylesheet.href = "css/main.css";
+            localStorage.setItem("responsiveLayout", "disabled");
+        } else {
+            // Currently using main layout, switch to responsive
+            mainStylesheet.href = "css/responsive.css";
+            localStorage.setItem("responsiveLayout", "enabled");
+        }
+    }
 }
