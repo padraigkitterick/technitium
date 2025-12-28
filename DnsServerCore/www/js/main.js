@@ -2869,20 +2869,28 @@ function restoreSettings() {
 
 function applyTheme() {
     const currentTheme = localStorage.getItem("theme");
+    const menuItem = document.getElementById("dropdown-menu-theme");
 
-    if (currentTheme === "dark")
+    if (currentTheme === "dark") {
         document.body.classList.add("dark-mode");
-    else
+        menuItem.children[0].text = "Disable Dark Mode";
+    } else {
         document.body.classList.remove("dark-mode");
+        menuItem.children[0].text = "Enable Dark Mode";
+    }
 }
 
 function toggleTheme() {
     document.body.classList.toggle("dark-mode");
+    const menuItem = document.getElementById("dropdown-menu-theme");
 
     let theme = "light";
+    menuItem.children[0].text = "Enable Dark Mode";
 
-    if (document.body.classList.contains("dark-mode"))
+    if (document.body.classList.contains("dark-mode")) {
         theme = "dark";
+        menuItem.children[0].text = "Disable Dark Mode";
+    }
 
     localStorage.setItem("theme", theme);
 
@@ -2897,14 +2905,17 @@ function toggleTheme() {
 function applyResponsiveLayout() {
     const responsiveLayoutEnabled = localStorage.getItem("responsiveLayout");
     const mainStylesheet = document.getElementById("main-stylesheet");
+    const menuItem = document.getElementById("dropdown-menu-responsive");
 
     if (mainStylesheet) {
         if (responsiveLayoutEnabled === "enabled") {
             // Switch to responsive.css
             mainStylesheet.href = "css/responsive.css";
+            menuItem.children[0].text = "Disable Responsive Layout";
         } else {
             // Switch to main.css
             mainStylesheet.href = "css/main.css";
+            menuItem.children[0].text = "Enable Responsive Layout";
         }
     }
 }
@@ -2915,12 +2926,11 @@ function toggleResponsiveLayout() {
     if (mainStylesheet) {
         if (mainStylesheet.href.endsWith("responsive.css")) {
             // Currently using responsive layout, switch to main
-            mainStylesheet.href = "css/main.css";
             localStorage.setItem("responsiveLayout", "disabled");
         } else {
             // Currently using main layout, switch to responsive
-            mainStylesheet.href = "css/responsive.css";
             localStorage.setItem("responsiveLayout", "enabled");
         }
     }
+    location.reload();
 }
