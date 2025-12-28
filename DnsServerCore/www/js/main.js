@@ -22,6 +22,25 @@ var reverseProxyDetected = false;
 var quickBlockLists = null;
 var quickForwardersList = null;
 
+function showLoggedOutSettingsDropdown() {
+    $("#mnuUserDisplayName").text("");
+
+    document.body.classList.add("loggedout");
+
+    const mnu = document.getElementsByClassName("menu-title")[0];
+    mnu.children[0].classList.remove("glyphicon-user");
+    mnu.children[0].classList.add("glyphicon-cog");
+}
+
+function hideLoggedOutSettingsDropdown() {
+    document.body.classList.remove("loggedout");
+
+    const mnu = document.getElementsByClassName("menu-title")[0];
+
+    mnu.children[0].classList.remove("glyphicon-cog");
+    mnu.children[0].classList.add("glyphicon-user");
+}
+
 function showPageLogin() {
     hideAlert();
 
@@ -29,6 +48,8 @@ function showPageLogin() {
 
     $("#pageMain").hide();
     $("#mnuUser").hide();
+
+    showLoggedOutSettingsDropdown();
 
     $("#txtUser").val("");
     $("#txtPass").val("");
@@ -51,6 +72,8 @@ function showPageMain() {
 
     $("#pageLogin").hide();
     $("#mnuUser").show();
+
+    hideLoggedOutSettingsDropdown();
 
     $(".nav-tabs li").removeClass("active");
     $(".tab-pane").removeClass("active");
@@ -2870,28 +2893,21 @@ function restoreSettings() {
 
 function applyTheme() {
     const currentTheme = localStorage.getItem("theme");
-    const menuItem = document.getElementById("dropdown-menu-theme");
 
     if (currentTheme === "dark") {
         document.body.classList.add("dark-mode");
-        menuItem.children[0].text = "Disable Dark Mode";
     } else {
         document.body.classList.remove("dark-mode");
-        menuItem.children[0].text = "Enable Dark Mode";
     }
 }
 
 function toggleTheme() {
     document.body.classList.toggle("dark-mode");
-    const menuItem = document.getElementById("dropdown-menu-theme");
 
     let theme = "light";
-    menuItem.children[0].text = "Enable Dark Mode";
 
-    if (document.body.classList.contains("dark-mode")) {
+    if (document.body.classList.contains("dark-mode"))
         theme = "dark";
-        menuItem.children[0].text = "Disable Dark Mode";
-    }
 
     localStorage.setItem("theme", theme);
 

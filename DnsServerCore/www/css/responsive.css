@@ -623,6 +623,29 @@ body.dark-mode {
     width: calc(100% - 40px);
 }
 
+
+/* Stop iOS from zooming in on form controls
+ * when clicked on
+ */
+.form-control {
+    font-size: 16px;
+}
+
+.loggedout {
+    div#mnuUser {
+        display: block !important;
+    }
+    div#mnuUser > ul.dropdown-menu > li {
+        display: none;
+    }
+    div#mnuUser > ul.dropdown-menu > li#dropdown-menu-theme, div#mnuUser > ul.dropdown-menu > li#dropdown-menu-responsive {
+        display: list-item;
+    }
+    .dropdown-menu {
+        margin-left: -175px;
+    }
+}
+
 /* Move drop-down to the right for compatibility
  * with all but smallest screen sizes
  */

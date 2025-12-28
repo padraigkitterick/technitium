@@ -342,6 +342,21 @@ th a {
     max-width: 250px;
 }
 
+.loggedout {
+    div#mnuUser {
+        display: block !important;
+    }
+    div#mnuUser > ul.dropdown-menu > li {
+        display: none;
+    }
+    div#mnuUser > ul.dropdown-menu > li#dropdown-menu-theme, div#mnuUser > ul.dropdown-menu > li#dropdown-menu-responsive {
+        display: list-item;
+    }
+    .dropdown-menu {
+        margin-left: -175px;
+    }
+}
+
 /* Define base min height for main activity
  * graph so that it can display consistently
  * now that its 'maintainAspectRatio' option
