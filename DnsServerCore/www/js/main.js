@@ -2397,7 +2397,8 @@ function refreshDashboard(hideLoader) {
                         },
                         legend: {
                             onClick: chartLegendOnClick
-                        }
+                        },
+                        maintainAspectRatio: false
                     }
                 });
 

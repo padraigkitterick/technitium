@@ -623,14 +623,27 @@ body.dark-mode {
     width: calc(100% - 40px);
 }
 
+/* Move drop-down to the right for compatibility
+ * with all but smallest screen sizes
+ */
 .dropdown-menu {
     margin-left: -60px;
+}
+
+/* Define base min height for main activity
+ * graph so that it can display consistently
+ * when its 'maintainAspectRatio' option is
+ * disabled for compatibility with responsive
+ * layouts
+ */
+div#divDashboard > div:nth-child(2) {
+    height: 554px !important;
 }
 
 /* Mobile responsive styles (<768px) */
 @media (max-width: 767px) {
     #header .title {
-        padding: 0px 10px;
+        padding: 3px 10px;
     }
 
     #header .title .text {
@@ -683,9 +696,9 @@ body.dark-mode {
 
     /* Make stats panels stack in 2-column grid */
     .stats-panel .stats-item {
-        width: 48%;
-        margin-right: 2%;
-        margin-bottom: 2%;
+        width: 49.5%;
+        margin-right: 1%;
+        margin-bottom: 1%;
         float: left;
     }
 
@@ -707,9 +720,9 @@ body.dark-mode {
 
     /* Make zone stats panels responsive */
     .zone-stats-panel .stats-item {
-        width: 48%;
-        margin-right: 2%;
-        margin-bottom: 2%;
+        width: 49.5%;
+        margin-right: 1%;
+        margin-bottom: 1%;
     }
 
     .zone-stats-panel .stats-item:nth-child(2n) {
@@ -750,6 +763,24 @@ body.dark-mode {
         width: calc(100% - 20px);
     }
 
+    /* Make main activity graph slightly shorter in height */
+    div#divDashboard > div:nth-child(2) {
+        height: 400px !important;
+	clear: both;
+    }
+
+    /* Pie charts and zone stats change to 1 column layout */
+    div#divDashboard > div:nth-child(3) > div:nth-child(1) {
+        width: 100% !important;
+        padding-right: 0px !important;
+    }
+    div#divDashboard > div:nth-child(3) > div:nth-child(2) {
+        width: 100% !important;
+        padding-left: 0px !important;
+        margin-top: 15px !important;
+    }
+
+    /* Top allow and block lists change to 1 column layout */
     div#divDashboard > div:nth-child(4) > div:nth-child(1) {
         width: 100% !important;
         padding-right: 0px !important;
@@ -825,6 +856,15 @@ body.dark-mode {
 
     .zone-stats-panel .stats-item:nth-child(3) {
         margin-right: 0;
+    }
+
+    /* Make main activity graph slightly shorter in
+     * height due to the fact that the stats panel
+     * items stack over two rows at this width
+     */
+    div#divDashboard > div:nth-child(2) {
+        height: 486px !important;
+	clear: both;
     }
 
 }

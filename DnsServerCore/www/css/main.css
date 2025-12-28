@@ -342,6 +342,16 @@ th a {
     max-width: 250px;
 }
 
+/* Define base min height for main activity
+ * graph so that it can display consistently
+ * now that its 'maintainAspectRatio' option
+ * has been set to 'false'  for compatibility
+ * with responsive layouts
+ */
+div#divDashboard > div:nth-child(2) {
+    min-height: 554px;
+}
+
 .dark-mode {
     scrollbar-width: thin;
     scrollbar-color: #555 #2c2c2e;
