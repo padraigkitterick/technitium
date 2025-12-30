@@ -1548,9 +1548,6 @@ body.dark-mode {
 }
 
 
-/* ============================================
-   CONSOLIDATED UTILITIES
-   ============================================ */
 
 /* Display */
 .d-block { display: block; }
@@ -1574,4 +1571,9 @@ body.dark-mode {
     outline: none;
     border-color: var(--color-primary);
     box-shadow: 0 0 0 0.2rem rgba(102, 153, 255, 0.25);
+}
+
+/* Display utility (used in responsive section) */
+.d-block {
+    display: block;
 }
