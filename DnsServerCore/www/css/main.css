@@ -1,27 +1,55 @@
-﻿html, body {
+﻿/* ============================================
+   CSS VARIABLES - Design System
+   ============================================ */
+
+:root {
+    /* Colors */
+    --color-primary: #6699ff;
+    
+    /* Grayscale */
+    --gray-500: #888888;
+    
+    /* Backgrounds */
+    --bg-body: #fafafa;
+    --bg-panel: #f3f3f3;
+    
+    /* Spacing (rem-based for scalability) */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.25rem;  /* 20px */
+    --font-md: 0.875rem;  /* 14px */
+    --container-max: 73.125rem;  /* 1170px */
+    --container-xl: 90rem;       /* 1440px */
+    --header-height: 2rem;       /* 32px */
+    --footer-height: 3.4375rem;  /* Borders */
+    --radius: 0.25rem;
+    --border-color: #dddddd;
+    
+    /* Shadows */
+}
+
+html, body {
     height: 100% !important;
     scrollbar-gutter: stable;
 }
 
-    body.modal-open {
-        padding-right: 0 !important;
-    }
-
-body {
+    bodybody {
     margin: 0px !important;
     line-height: 1.42857143 !important;
+    background-color: var(--bg-body);
 }
 
 a {
-    color: #6699ff;
+    color: var(--color-primary);
 }
 
     a:hover {
-        color: #6699ff;
+        color: var(--color-primary);
     }
 
     a:visited {
-        color: #6699ff;
+        color: var(--color-primary);
     }
 
 th a {
@@ -34,12 +62,12 @@ th a {
     }
 
 #header {
-    background-color: #6699ff;
-    height: 32px;
-    margin-bottom: -32px;
-    box-shadow: 0px 1px 15px 0px #888888;
+    background-color: var(--color-primary);
+    height: var(--header-height);
+    margin-bottom: calc(-1 * var(--header-height));
+    box-shadow: 0 1px 15px 0 var(--gray-500);
     width: 100%;
-    min-width: 970px;
+    /* Responsive - no min-width */
 }
 
     #header .title {
@@ -79,13 +107,14 @@ th a {
     margin-right: auto;
     padding: 55px 15px 60px 15px;
     word-wrap: break-word;
-    min-width: 970px;
+    width: 100%;
+    max-width: var(--container-max);
 }
 
     .container .pageLogin {
         display: none;
         margin: auto;
-        width: 500px;
+        width: 31.25rem;
         padding: 150px 0 0 0;
     }
 
@@ -93,36 +122,20 @@ th a {
         display: none;
     }
 
-.auto-resize-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.center-iframe {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 640px;
-    max-height: 480px;
-}
-
-    .center-iframe iframe {
+.center-iframe iframe {
         width: 100%;
         height: 100%;
     }
 
 #footer {
-    background-color: rgb(243, 243, 243);
-    padding: 20px 0px 20px 0px;
-    margin-top: -55px;
-    box-shadow: 0px 2px 15px 1px #888888;
+    background-color: var(--bg-panel);
+    padding: var(--space-5) 0;
+    margin-top: calc(-1 * var(--footer-height));
+    box-shadow: 0 2px 15px 1px var(--gray-500);
     clear: both;
     position: relative;
-    height: 55px;
-    min-width: 970px;
+    height: var(--footer-height);
+    /* Responsive */
 }
 
     #footer .content {
@@ -135,23 +148,23 @@ th a {
     }
 
         #footer .content a {
-            color: #6699ff;
+            color: var(--color-primary);
             text-decoration: none;
         }
 
             #footer .content a:hover {
-                color: #6699ff;
+                color: var(--color-primary);
             }
 
 @media (min-width: 992px) {
     #header .title, .container, #footer .content {
-        width: 970px;
+        max-width: 60.625rem; /* 970px */
     }
 }
 
 @media (min-width: 1200px) {
     #header .title, .container, #footer .content {
-        width: 1170px;
+        max-width: var(--container-max);
     }
 }
 
@@ -162,7 +175,7 @@ th a {
 
 .AlertPlaceholder {
     position: fixed;
-    width: 800px;
+    width: 50rem;
     margin: auto;
     left: 0;
     right: 0;
@@ -213,7 +226,7 @@ th a {
 }
 
 .stats-panel {
-    height: 80px;
+    height: 5rem;
     padding: 6px 0 6px 0;
 }
 
@@ -338,16 +351,11 @@ th a {
 .cluster-node-dropdown {
     margin-left: 4px;
     padding: 2px 8px;
-    height: 28px;
-    max-width: 250px;
+    height: 1.75rem;
+    max-width: 15.625rem;
 }
 
-.dark-mode {
-    scrollbar-width: thin;
-    scrollbar-color: #555 #2c2c2e;
-}
-
-    .dark-mode ::-webkit-scrollbar {
+.dark-mode ::-webkit-scrollbar {
         width: 12px;
         height: 12px;
     }
@@ -362,12 +370,7 @@ th a {
         border: 3px solid #2c2c2e;
     }
 
-body.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #dcdcdc !important;
-}
-
-.dark-mode th a,
+body.dark-mode th a,
 .dark-mode th a:hover {
     color: #dcdcdc !important;
     text-decoration: none !important;
@@ -417,12 +420,7 @@ body.dark-mode {
     color: #dcdcdc !important;
 }
 
-.dark-mode .navbar-default {
-    background-color: #2c2c2e !important;
-    border-color: #3a3a3c !important;
-}
-
-.dark-mode .dropdown-menu {
+.dark-mode .dark-mode .dropdown-menu {
     background-color: #2c2c2e !important;
     border-color: #3a3a3c !important;
 }
@@ -514,35 +512,14 @@ body.dark-mode {
     border: 1px solid #4a4a4c !important;
 }
 
-.dark-mode .btn-default {
-    color: #f5f5f7 !important;
-    background-color: #3a3a3c !important;
-    border-color: #4a4a4c !important;
-}
 
-    .dark-mode .btn-default:hover,
-    .dark-mode .btn-default.active {
-        background-color: #4a4a4c !important;
-        border-color: #5a5a5c !important;
-    }
 
-.dark-mode .input-group-addon {
-    background-color: #3a3a3c !important;
-    border-color: #4a4a4c !important;
-}
-
-.dark-mode .stats-panel .stats-item,
+.dark-mode .dark-mode .stats-panel .stats-item,
 .dark-mode .zone-stats-panel .stats-item {
     color: #fff !important;
 }
 
-.dark-mode .c3-axis-x text,
-.dark-mode .c3-axis-y text,
-.dark-mode .c3-legend-item {
-    fill: #dcdcdc !important;
-}
-
-.dark-mode .c3-grid line {
+.dark-mode .c3-axis-x text {
     stroke: #4a4a4c !important;
 }
 
@@ -586,3 +563,377 @@ body.dark-mode {
     .dark-mode #txtQueryLogEnd::-webkit-calendar-picker-indicator {
         filter: invert(1);
     }
+
+/* ============================================
+
+/* ============================================
+   REFACTORED STYLES
+   Organized by category for maintainability
+   ============================================ */
+
+/* ============================================
+   NOTE: Bootstrap 3.4.1 Utilities Available
+   ============================================
+   
+   The project uses Bootstrap 3.4.1 which provides many utilities.
+   Use these instead of custom classes where possible:
+   
+   - Layout: .container, .container-fluid, .row, .col-*
+   - Float: .pull-left, .pull-right, .clearfix
+   - Text: .text-left, .text-center, .text-right, .text-uppercase, etc.
+   - Visibility: .hidden, .show, .visible-*, .hidden-*
+   - Buttons: .btn, .btn-default, .btn-primary, .btn-sm, .btn-lg, etc.
+   - Forms: .form-control, .form-group, .control-label, .input-group, etc.
+   - Panels: .panel, .panel-default, .panel-heading, .panel-body, etc.
+   - Tables: .table, .table-striped, .table-hover, .table-bordered, etc.
+   - Wells: .well, .well-sm, .well-lg
+   - Modals: .modal, .modal-dialog, .modal-content, etc.
+   
+   Custom classes below are for:
+   - CSS variables (not in Bootstrap)
+   - Spacing utilities (Bootstrap 3 lacks rem-based spacing)
+   - Responsive breakpoints (custom mobile-first approach)
+   - Application-specific components
+   ============================================ */
+
+/* ============================================
+   NOTE: Now Using Bootstrap 5.3.3 from CDN
+   ============================================
+   
+   Bootstrap 5 provides extensive utility classes that replace many custom utilities.
+   Use these Bootstrap classes instead of creating custom ones:
+   
+   - Spacing: .m-{0-5}, .mt-*, .mb-*, .ms-*, .me-*, .mx-*, .my-*, .p-{0-5}, .pt-*, etc.
+   - Display: .d-none, .d-block, .d-inline, .d-flex, .d-grid
+   - Flexbox: .flex-row, .flex-column, .justify-content-*, .align-items-*
+   - Sizing: .w-{25|50|75|100}, .h-{25|50|75|100}, .mw-100, .vh-100
+   - Text: .text-{start|center|end}, .fw-bold, .fs-{1-6}, .text-decoration-none
+   - Colors: .bg-*, .text-*, .bg-opacity-*
+   - Position: .position-*, .float-start, .float-end
+   
+   The classes below are application-specific and cannot be replaced with Bootstrap utilities.
+   ============================================ */
+
+.w-inherit {
+    width: inherit;
+}
+
+.w-76 {
+    width: 4.75rem;
+}
+
+.w-80 {
+    width: 5rem;
+}
+
+.panel-head-sm {
+    height: 2.25rem;
+    padding: 4px 6px;
+}
+
+.h-350 {
+    height: 21.875rem;
+}
+
+.panel-filter-form {
+    padding: 10px 10px 0 10px;
+    margin-bottom: 10px;
+}
+
+.form-section {
+    padding-bottom: 6px;
+    margin-bottom: 15px;
+}
+
+.setting-tabs-container {
+    padding: 0 6px 0 0;
+    max-height: 28.125rem;
+    margin: 10px 0 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.min-w-295 {
+    min-width: 18.4375rem;
+}
+
+.min-w-240 {
+    min-width: 15rem;
+}
+
+.min-w-100 {
+    min-width: 6.25rem;
+}
+
+.w-96 {
+    width: 6rem;
+}
+
+.w-150 {
+    width: 9.375rem;
+}
+
+.w-120 {
+    width: 7.5rem;
+}
+
+.h-auto {
+    height: auto;
+}
+
+/* Padding */
+/* Margin */
+/* Width */
+.w-100 {
+    width: 6.25rem;
+}
+.w-36 {
+    width: 2.25rem;
+}
+.w-780 {
+    width: 48.75rem;
+}
+.w-84 {
+    width: 5.25rem;
+}
+
+.h-500 {
+    height: 31.25rem;
+}
+.h-38 {
+    height: 2.375rem;
+}
+
+.min-h-500 {
+    min-height: 31.25rem;
+}
+
+/* Consolidated Button Styles */
+/* Panel & Modal */
+.panel-head-compact {
+    height: 2.5625rem;
+    padding: 4px 6px;
+}
+
+.modal-body-scroll {
+    max-height: 31.25rem;
+    overflow-y: auto;
+    padding: 0 6px;
+    overflow-x: hidden;
+}
+
+/* Input */
+.input-dropdown-text {
+    min-width: 16.875rem;
+    border-right: 0px;
+}
+
+/* Layout Columns */
+/* Overflow */
+.overflow-y-scroll {
+    overflow-y: scroll;
+}
+/* Utility Classes */
+
+.h-400 {
+    display: none;
+    margin-top: 10px;
+    height: 25rem;
+}
+
+.wrap-normal-break-normal {
+    display: none;
+    word-wrap: normal;
+    word-break: normal;
+}
+
+.h-400 {
+    height: 25rem;
+}
+
+.h-300 {
+    margin-top: 20px;
+    height: 18.75rem;
+}
+
+.h-400 {
+    margin-top: 20px;
+    height: 25rem;
+}
+
+.m--6-0-0--12 {
+    margin: -6px 0px 0px -12px;
+}
+
+.p-0-15 {
+    max-height: 31.25rem;
+    overflow-y: auto;
+    padding: 0 15px;
+    overflow-x: hidden;
+}
+
+.max-w-800-m-0-auto-10-auto {
+    max-width: 50rem;
+    margin: 0 auto 10px auto;
+}
+
+.min-w-120 {
+    min-width: 7.5rem;
+}
+
+.min-w-170 {
+    min-width: 10.625rem;
+}
+
+.min-w-200 {
+    min-width: 12.5rem;
+}
+
+.min-w-300 {
+    min-width: 18.75rem;
+}
+
+.wrap-anywhere {
+    padding-top: 7px;
+    word-wrap: anywhere;
+}
+
+.p-0-6-0-0-m-10-0-0-0 {
+    padding: 0 6px 0 0;
+    max-height: 28.125rem;
+    margin: 10px 0 0 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.p-0-25 {
+    padding: 0px 25px;
+}
+
+.p-40-0-20-0 {
+    padding: 40px 0 20px 0;
+}
+
+.w-750 {
+    width: 46.875rem;
+}
+
+.w-800 {
+    width: 50rem;
+}
+
+.w-80 {
+    width: 5rem;
+    display: inline;
+}
+
+.w-90 {
+    width: 5.625rem;
+}
+
+.w-94 {
+    width: 5.875rem;
+}
+
+.w-95 {
+    width: 5.9375rem;
+}
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Mobile First - Stack layouts on small screens */
+@media (max-width: 767px) {
+    /* Container adjustments */
+    .container {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+    }
+    
+    /* Stack stats panels */
+    .stats-panel .stats-item {
+        width: 48% !important;
+        margin-right: 2% !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .stats-panel .stats-last-item {
+        margin-right: 2% !important;
+    }
+    
+    .zone-stats-panel .stats-item {
+        width: 48% !important;
+        margin-right: 2% !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    /* Stack column layouts */
+    /* Full width zone/log panels */
+    .zone-list-pane,
+    .zone-viewer-pane,
+    .log-list-pane,
+    .log-viewer-pane {
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    /* Show zone/log viewer by default on mobile */
+    .zone-viewer-pane,
+    .log-viewer-pane {
+        display: block !important;
+    }
+    
+    /* Adjust panel headings */
+    .panel-head-compact,
+    .panel-head-sm {
+        padding: var(--space-2);
+        height: auto;
+    }
+    
+    /* Stack forms */
+
+/* Tablet and above */
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+    .container {
+        padding-left: var(--space-5);
+        padding-right: var(--space-5);
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1440px) {
+    .container {
+        max-width: var(--container-xl);
+    }
+}
+
+/* Utility classes for responsive display */
+@media (max-width: 767px) {
+    }
+
+/* Display */
+/* Common styles - reduces need for multiple classes */
+.form-control {
+    font-size: var(--font-md);
+    padding: var(--space-2) var(--space-3);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+}
+
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 0.2rem rgba(102, 153, 255, 0.25);
+}
+
+/* Display utility (used in responsive section) */
