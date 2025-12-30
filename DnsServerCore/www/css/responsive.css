@@ -169,6 +169,7 @@ div#divDashboard > div:nth-child(2) {
             border: none;
             border-bottom: 1px solid #eee;
             position: relative;
+            width: 100%;
             text-align: right;
         }
         tbody > tr > td {
@@ -187,6 +188,10 @@ div#divDashboard > div:nth-child(2) {
 	td.no-header {
             padding-top: 10px !important;
 	}
+	/* Specific fix to override inline CSS for Zone name */
+        table#tableZones > tbody > tr> td:nth-child(2) {
+            max-width: 100% !important;
+        }
     }
 
     /* Adjust form controls */
@@ -206,16 +211,23 @@ div#divDashboard > div:nth-child(2) {
         min-width: 240px !important;
     }
 
-    div#divViewZones .form-inline .form-group {
-        display: inline-block;
-        vertical-align: middle;
-    }
-    div#divViewZones .form-inline .form-control {
-        display: inline-block;
-        width: auto;
-        vertical-align: middle;
+    div#divViewZones, div#divEditZone {
+        .form-inline .form-group {
+            display: inline-block;
+            vertical-align: middle;
+        }
+
+        .form-inline .form-control {
+            display: inline-block;
+            width: auto;
+            vertical-align: middle;
+        }
     }
     input#txtZonesEdit {
+        width: auto !important;
+        max-width: 300px;
+    }
+    input#txtEditZoneFilterName {
         width: auto !important;
         max-width: 300px;
     }
