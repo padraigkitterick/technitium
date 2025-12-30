@@ -144,7 +144,7 @@ div#divDashboard > div:nth-child(2) {
     }
 
     /* Make specific tables flow row contents vertically */
-    div#divViewZones, div#divMyProfileViewer {
+    div#divViewZones, div#divEditZone, div#divMyProfileViewer {
         table, thead, tbody, th, td, tfoot {
             display: block;
             width: 100%;
@@ -161,23 +161,24 @@ div#divDashboard > div:nth-child(2) {
             border: none;
             border-bottom: 1px solid #eee;
             position: relative;
-            padding-left: 50%; /* Space for label */
             text-align: right;
+        }
+        tbody > tr > td {
+            padding-top: 30px; /* Space for label */
         }
         td::before {
             display: inline-table;
             content: attr(data-label);
             position: absolute;
             left: 10px;
-            width: 45%;
+            top: 10px;
             padding-left: 10px;
             font-weight: bold;
             text-align: left;
         }
-    }
-
-    table#tableZones > tbody > tr> td:nth-child(2) {
-        max-width: 100% !important;
+	td.no-header {
+            padding-top: 10px !important;
+	}
     }
 
     /* Adjust form controls */

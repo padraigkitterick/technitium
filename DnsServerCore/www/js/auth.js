@@ -685,9 +685,9 @@ function showMyProfileModal() {
                             break;
                     }
 
-                    sessionHtmlRows += "<tr id=\"trMyProfileActiveSessions" + i + "\"><td data-label=\"Session\" style=\"min-width: 155px; word-wrap: anywhere;\">" + session + "</td><td data-label=\"Last Seen\">" +
-                        htmlEncode(moment(responseJSON.response.sessions[i].lastSeen).local().format("YYYY-MM-DD HH:mm:ss")) + "<br /><span style=\"font-size: 12px\">" + htmlEncode("(" + moment(responseJSON.response.sessions[i].lastSeen).fromNow() + ")") + "</span></td><td data-label=\"Remote Address\">" +
-                        htmlEncode(responseJSON.response.sessions[i].lastSeenRemoteAddress) + "</td><td data-label=\"User Agent\" style=\"word-wrap: anywhere;\">" +
+                    sessionHtmlRows += "<tr id=\"trMyProfileActiveSessions" + i + "\"><td style=\"min-width: 155px; word-wrap: anywhere;\">" + session + "</td><td>" +
+                        htmlEncode(moment(responseJSON.response.sessions[i].lastSeen).local().format("YYYY-MM-DD HH:mm:ss")) + "<br /><span style=\"font-size: 12px\">" + htmlEncode("(" + moment(responseJSON.response.sessions[i].lastSeen).fromNow() + ")") + "</span></td><td>" +
+                        htmlEncode(responseJSON.response.sessions[i].lastSeenRemoteAddress) + "</td><td style=\"word-wrap: anywhere;\">" +
                         htmlEncode(responseJSON.response.sessions[i].lastSeenUserAgent);
 
                     sessionHtmlRows += "</td><td align=\"right\"><div class=\"dropdown\"><a href=\"#\" id=\"btnMyProfileActiveSessionRowOption" + i + "\" class=\"dropdown-toggle\" data-toggle=\"dropdown\" aria-haspopup=\"true\" aria-expanded=\"true\"><span class=\"glyphicon glyphicon-option-vertical\" aria-hidden=\"true\"></span></a><ul class=\"dropdown-menu dropdown-menu-right\">";

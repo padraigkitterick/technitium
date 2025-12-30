@@ -552,6 +552,7 @@ $(function () {
     });
 
     applyTheme();
+    observeTables();
 });
 
 function showAbout() {
@@ -2892,4 +2893,65 @@ function toggleTheme() {
         window.chartDashboardPie2.update();
         window.chartDashboardPie3.update();
     }
+}
+
+function applyDataLabelsToTables() {
+  // Select all tables with a <thead> in the DOM
+  const tables = document.querySelectorAll('table thead');
+
+  // Loop through each table
+  tables.forEach((thead) => {
+    // Find the header cells (<th>)
+    const headers = Array.from(thead.querySelectorAll('th'));
+
+    // Get the parent table and its tbody rows
+    const table = thead.closest('table');
+    const rows = table.querySelectorAll('tbody tr');
+
+    // Loop through each row
+    rows.forEach((row) => {
+      // Find all <td> cells in the row
+      const cells = Array.from(row.querySelectorAll('td'));
+
+      // Loop through each cell and apply 'data-label' or 'no-header'
+      cells.forEach((cell, index) => {
+        if (headers[index]) {
+          // Get the header text, if any
+          const label = headers[index].textContent.trim();
+
+          if (label) {
+            // Set the data-label attribute with the header text
+            cell.setAttribute('data-label', label);
+            // Remove the no-header class in case it was earlier added
+            cell.classList.remove('no-header');
+          } else {
+            // Add the 'no-header' class if there's no header text
+            cell.classList.add('no-header');
+            // Remove any existing data-label attribute
+            cell.removeAttribute('data-label');
+          }
+        }
+      });
+    });
+  });
+}
+
+function observeTables() {
+    // Observe for changes in tables using MutationObserver
+    const tableContainer = document.body; // Replace with the container that holds all tables
+    const observer = new MutationObserver((mutationsList) => {
+      mutationsList.forEach((mutation) => {
+        // Check if any rows were added or updated
+        if (mutation.type === "childList") {
+          // Apply data labels after detecting content changes
+          applyDataLabelsToTables();
+        }
+      });
+    });
+
+    // Start observing table changes
+    observer.observe(tableContainer, {
+      childList: true, // Listen for changes to direct children
+      subtree: true,   // Include all descendants
+    });
 }
