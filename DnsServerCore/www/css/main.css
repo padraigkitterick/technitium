@@ -679,6 +679,47 @@ body.dark-mode {
    - Application-specific components
    ============================================ */
 
+
+/* ============================================
+   NOTE: Now Using Bootstrap 5.3.3 from CDN
+   ============================================
+   
+   Bootstrap 5 provides extensive utility classes:
+   
+   Spacing: .m-{0-5}, .mt-*, .mb-*, .ms-*, .me-*, .mx-*, .my-*
+            .p-{0-5}, .pt-*, .pb-*, .ps-*, .pe-*, .px-*, .py-*
+   
+   Display: .d-none, .d-block, .d-inline, .d-inline-block, .d-flex, .d-grid
+   
+   Flexbox: .d-flex, .flex-row, .flex-column, .flex-wrap
+            .justify-content-{start|center|end|between|around}
+            .align-items-{start|center|end|stretch}
+   
+   Sizing:  .w-{25|50|75|100}, .h-{25|50|75|100}, .w-auto, .h-auto
+            .mw-100, .mh-100, .vw-100, .vh-100
+   
+   Text:    .text-{start|center|end}, .text-{uppercase|lowercase|capitalize}
+            .fw-{normal|bold|bolder|light}, .fs-{1-6}
+            .text-{primary|secondary|success|danger|warning|info|light|dark|muted}
+   
+   Colors:  .bg-{primary|secondary|success|danger|warning|info|light|dark}
+            .text-bg-{color} for colored backgrounds with contrasting text
+   
+   Borders: .border, .border-{top|end|bottom|start}, .border-{0-5}
+            .rounded, .rounded-{top|end|bottom|start|circle|pill}
+   
+   Position: .position-{static|relative|absolute|fixed|sticky}
+             .top-{0|50|100}, .bottom-*, .start-*, .end-*
+   
+   Shadows: .shadow, .shadow-sm, .shadow-lg
+   
+   Custom CSS below is for:
+   - CSS Variables (theming)
+   - Application-specific components
+   - Dark mode overrides
+   - Styles not in Bootstrap 5
+   ============================================ */
+
 /* Display & Visibility */
 .d-inline {
     display: inline;
@@ -690,8 +731,6 @@ body.dark-mode {
 .align-top {
     vertical-align: top;
 }
-
-
 
 
 /* Text & Decoration */
@@ -708,9 +747,6 @@ body.dark-mode {
 }
 
 
-
-
-
 /* Background Colors */
 .bg-light {
     background-color: var(--bg-body);
@@ -719,13 +755,7 @@ body.dark-mode {
     background-color: var(--bg-surface-alt);
 }
 
-.bg-white {
-    background-color: white;
-}
-
-   REFACTORED STYLES - Extracted from inline styles
-
-
+REFACTORED STYLES - Extracted from inline styles
 
 
 .w-65 {
@@ -744,21 +774,13 @@ body.dark-mode {
     width: 8.125rem;
 }
 
-.w-270 {
-    width: 16.875rem;
-}
+
 
 .w-240 {
     width: 15rem;
 }
 
-.w-250 {
-    width: 15.625rem;
-}
 
-.w-100pct {
-    width: 100%;
-}
 
 .w-inherit {
     width: inherit;
@@ -781,37 +803,9 @@ body.dark-mode {
     height: 21.875rem;
 }
 
-.h-100 {
-    height: 6.25rem;
-}
-
-.p-8 {
-    padding: 8px;
-}
-
-.pt-7 {
-    padding-top: 7px;
-}
-
-.pl-40 {
-    padding-left: 40px;
-}
-
-.py-10 {
-    padding: 10px 0px;
-}
-
-.py-4 {
-    padding: 4px 0px;
-}
-
 .label-bold {
     padding: 6px 0;
     font-weight: bold;
-}
-
-.pr-8 {
-    padding-right: 8px;
 }
 
 .panel-filter-form {
@@ -824,10 +818,6 @@ body.dark-mode {
     margin-bottom: 15px;
 }
 
-.pr-20 {
-    padding-right: 20px;
-}
-
 .setting-tabs-container {
     padding: 0 6px 0 0;
     max-height: 28.125rem;
@@ -836,29 +826,7 @@ body.dark-mode {
     overflow-x: hidden;
 }
 
-.mb-10 {
-    margin-bottom: 10px;
-}
 
-.mb-6 {
-    margin-bottom: 6px;
-}
-
-.mt-40 {
-    margin-top: 40px;
-}
-
-.ml-10 {
-    margin-left: 10px;
-}
-
-.ml-6 {
-    margin-left: 6px;
-}
-
-.min-w-270 {
-    min-width: 16.875rem;
-}
 
 .min-w-295 {
     min-width: 18.4375rem;
@@ -895,18 +863,9 @@ body.dark-mode {
     border-right: 0px;
 }
 
-.p-10 {
-    padding: 10px;
-}
-
 .align-middle {
     vertical-align: middle;
 }
-
-.d-block {
-    display: block;
-}
-
 
 .w-96 {
     width: 6rem;
@@ -920,65 +879,27 @@ body.dark-mode {
     width: 10.625rem;
 }
 
-.w-190 {
-    width: 11.875rem;
-}
+
 
 .w-120 {
     width: 7.5rem;
 }
 
-.w-160 {
-    width: 10rem;
-}
 
-.w-60 {
-    width: 3.75rem;
-}
+
+
 
 .w-200 {
     width: 12.5rem;
 }
 
-.w-500 {
-    width: 31.25rem;
-}
+
 
 .h-auto {
     height: auto;
 }
 
-.h-41 {
-    height: 2.5625rem;
-}
 
-.py-2 {
-    padding: 2px 0px;
-}
-
-.pt-15 {
-    padding-top: 15px;
-}
-
-.pt-12 {
-    padding-top: 12px;
-}
-
-.pt-6 {
-    padding-top: 6px;
-}
-
-.pt-4 {
-    padding-top: 4px;
-}
-
-.pl-20 {
-    padding-left: 20px;
-}
-
-.pl-8 {
-    padding-left: 8px;
-}
 
 .p-2-6 {
     padding: 2px 6px;
@@ -1000,30 +921,6 @@ body.dark-mode {
     font-size: 10px;
 }
 
-.mb-5 {
-    margin-bottom: 5px;
-}
-
-.mt-5 {
-    margin-top: 5px;
-}
-
-.ml-8 {
-    margin-left: 8px;
-}
-
-.mb-8 {
-    margin-bottom: 8px;
-}
-
-.my-6 {
-    margin: 6px 0;
-}
-
-.border-0 {
-    border: 0px;
-}
-
 .border-bottom-transparent-important {
     border-bottom-color: transparent !important;
 }
@@ -1038,99 +935,16 @@ body.dark-mode {
 
 
 /* Padding */
-.pt-5 {
-    padding-top: 5px;
-}
-
 .pt-10-only {
     padding: 10px 0 0 0;
-}
-.pt-8 {
-    padding-top: 8px;
 }
 .p-6-8 {
     padding: 6px 8px;
 }
-.px-20 {
-    padding: 0px 20px;
-}
 .p-4-6 {
     padding: 4px 6px;
 }
-.p-0 {
-    padding: 0px;
-}
-.py-6 {
-    padding: 6px 0;
-}
-.p-2 {
-    padding: 2px;
-}
-.p-4 {
-    padding: 4px;
-}
-.p-6 {
-    padding: 6px;
-}
-
-
-
-
 /* Margin */
-.m-0 {
-    margin: 0;
-}
-.m-0 {
-    margin: 0px;
-}
-.mb-0 {
-    margin-bottom: 0px;
-}
-.mb-0 {
-    margin-bottom: 0;
-}
-.mt-10 {
-    margin-top: 10px;
-}
-.mt-15 {
-    margin-top: 15px;
-}
-.ml-0 {
-    margin-left: 0px;
-}
-.mr-6 {
-    margin-right: 6px;
-}
-.mb-15 {
-    margin-bottom: 15px;
-}
-.mb-4 {
-    margin-bottom: 4px;
-}
-.ml-4 {
-    margin-left: 4px;
-}
-.mr-0 {
-    margin-right: 0px;
-}
-.ml-2 {
-    margin-left: 2px;
-}
-.mr-10 {
-    margin-right: 10px;
-}
-.my-2 {
-    margin: 2px 0px;
-}
-.my-10 {
-    margin: 10px 0 10px 0;
-}
-.my-4 {
-    margin: 4px 0;
-}
-
-
-
 /* Width */
 .w-100 {
     width: 6.25rem;
@@ -1144,15 +958,7 @@ body.dark-mode {
 .w-84 {
     width: 5.25rem;
 }
-.w-auto {
-    width: auto;
-}
-.w-50 {
-    width: 3.125rem;
-}
-.w-full {
-    width: 100%;
-}
+
 .h-500 {
     height: 31.25rem;
 }
@@ -1163,8 +969,6 @@ body.dark-mode {
 .min-h-500 {
     min-height: 31.25rem;
 }
-
-
 
 
 /* Consolidated Button Styles */
@@ -1219,7 +1023,6 @@ body.dark-mode {
 }
 
 
-
 /* Layout Columns */
 .col-left-50 {
     float: left;
@@ -1249,7 +1052,6 @@ body.dark-mode {
 }
 
 
-
 /* Overflow */
 .overflow-y-auto {
     overflow-y: auto;
@@ -1260,7 +1062,6 @@ body.dark-mode {
 .overflow-x-hidden {
     overflow-x: hidden;
 }
-
 
 
 /* Utility Classes */
@@ -1275,11 +1076,6 @@ body.dark-mode {
     display: none;
     word-wrap: normal;
     word-break: normal;
-}
-
-.p-4 {
-    float: left;
-    padding: 4px;
 }
 
 .h-400 {
@@ -1441,8 +1237,6 @@ body.dark-mode {
 }
 
 
-
-
 /* ============================================
    RESPONSIVE UTILITIES
    ============================================ */
@@ -1548,15 +1342,7 @@ body.dark-mode {
 }
 
 
-
 /* Display */
-.d-block { display: block; }
-.d-inline-block { display: inline-block; }
-.d-flex { display: flex; }
-.flex-wrap { flex-wrap: wrap; }
-.justify-between { justify-content: space-between; }
-.align-center { align-items: center; }
-
 /* Common styles - reduces need for multiple classes */
 .form-input,
 .form-control {
@@ -1574,6 +1360,3 @@ body.dark-mode {
 }
 
 /* Display utility (used in responsive section) */
-.d-block {
-    display: block;
-}
