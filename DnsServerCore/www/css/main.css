@@ -1,4 +1,67 @@
-﻿html, body {
+﻿/* ============================================
+   CSS VARIABLES - Design System
+   ============================================ */
+
+:root {
+    /* Colors */
+    --color-primary: #6699ff;
+    --color-success: #5cb85c;
+    --color-danger: #d9534f;
+    --color-warning: #f0ad4e;
+    --color-info: #5bc0de;
+    
+    /* Grayscale */
+    --gray-100: #f5f5f7;
+    --gray-200: #f0f0f0;
+    --gray-300: #dcdcdc;
+    --gray-400: #a0a0a0;
+    --gray-500: #888888;
+    --gray-600: #777777;
+    --gray-700: #555555;
+    --gray-800: #333333;
+    --gray-900: #1a1a1a;
+    
+    /* Backgrounds */
+    --bg-body: #fafafa;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #fbfbfb;
+    --bg-panel: #f3f3f3;
+    
+    /* Spacing (rem-based for scalability) */
+    --space-1: 0.25rem;  /* 4px */
+    --space-2: 0.5rem;   /* 8px */
+    --space-3: 0.75rem;  /* 12px */
+    --space-4: 1rem;     /* 16px */
+    --space-5: 1.25rem;  /* 20px */
+    --space-6: 1.5rem;   /* 24px */
+    --space-8: 2rem;     /* 32px */
+    --space-10: 2.5rem;  /* 40px */
+    
+    /* Typography */
+    --font-xs: 0.625rem;  /* 10px */
+    --font-sm: 0.75rem;   /* 12px */
+    --font-md: 0.875rem;  /* 14px */
+    --font-lg: 1rem;      /* 16px */
+    --font-xl: 1.125rem;  /* 18px */
+    --font-2xl: 1.5rem;   /* 24px */
+    
+    /* Layout */
+    --container-max: 73.125rem;  /* 1170px */
+    --container-xl: 90rem;       /* 1440px */
+    --header-height: 2rem;       /* 32px */
+    --footer-height: 3.4375rem;  /* 55px */
+    
+    /* Borders */
+    --radius: 0.25rem;
+    --border-color: #dddddd;
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.12);
+    --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+html, body {
     height: 100% !important;
     scrollbar-gutter: stable;
 }
@@ -10,18 +73,19 @@
 body {
     margin: 0px !important;
     line-height: 1.42857143 !important;
+    background-color: var(--bg-body);
 }
 
 a {
-    color: #6699ff;
+    color: var(--color-primary);
 }
 
     a:hover {
-        color: #6699ff;
+        color: var(--color-primary);
     }
 
     a:visited {
-        color: #6699ff;
+        color: var(--color-primary);
     }
 
 th a {
@@ -34,12 +98,12 @@ th a {
     }
 
 #header {
-    background-color: #6699ff;
+    background-color: var(--color-primary);
     height: 32px;
     margin-bottom: -32px;
     box-shadow: 0px 1px 15px 0px #888888;
     width: 100%;
-    min-width: 970px;
+    /* Responsive - no min-width */
 }
 
     #header .title {
@@ -79,7 +143,8 @@ th a {
     margin-right: auto;
     padding: 55px 15px 60px 15px;
     word-wrap: break-word;
-    min-width: 970px;
+    width: 100%;
+    max-width: var(--container-max);
 }
 
     .container .pageLogin {
@@ -115,14 +180,14 @@ th a {
     }
 
 #footer {
-    background-color: rgb(243, 243, 243);
+    background-color: var(--bg-panel);
     padding: 20px 0px 20px 0px;
     margin-top: -55px;
     box-shadow: 0px 2px 15px 1px #888888;
     clear: both;
     position: relative;
     height: 55px;
-    min-width: 970px;
+    /* Responsive */
 }
 
     #footer .content {
@@ -135,23 +200,23 @@ th a {
     }
 
         #footer .content a {
-            color: #6699ff;
+            color: var(--color-primary);
             text-decoration: none;
         }
 
             #footer .content a:hover {
-                color: #6699ff;
+                color: var(--color-primary);
             }
 
 @media (min-width: 992px) {
     #header .title, .container, #footer .content {
-        width: 970px;
+        max-width: 60.625rem; /* 970px */
     }
 }
 
 @media (min-width: 1200px) {
     #header .title, .container, #footer .content {
-        width: 1170px;
+        max-width: var(--container-max);
     }
 }
 
@@ -651,10 +716,10 @@ body.dark-mode {
 
 /* Background Colors */
 .bg-light {
-    background-color: #fafafa;
+    background-color: var(--bg-body);
 }
 .bg-lighter {
-    background-color: #fbfbfb;
+    background-color: var(--bg-surface-alt);
 }
 
 .bg-white {
@@ -1391,3 +1456,108 @@ body.dark-mode {
 }
 
 
+
+
+/* ============================================
+   RESPONSIVE UTILITIES
+   ============================================ */
+
+/* Mobile First - Stack layouts on small screens */
+@media (max-width: 767px) {
+    /* Container adjustments */
+    .container {
+        padding-left: var(--space-3);
+        padding-right: var(--space-3);
+    }
+    
+    /* Stack stats panels */
+    .stats-panel .stats-item {
+        width: 48% !important;
+        margin-right: 2% !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    .stats-panel .stats-last-item {
+        margin-right: 2% !important;
+    }
+    
+    .zone-stats-panel .stats-item {
+        width: 48% !important;
+        margin-right: 2% !important;
+        margin-bottom: var(--space-2);
+    }
+    
+    /* Stack column layouts */
+    .col-left-50,
+    .col-right-50,
+    .col-left-24,
+    .col-right-75,
+    .col-left-17,
+    .col-right-82 {
+        width: 100% !important;
+        float: none !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-bottom: var(--space-4);
+    }
+    
+    /* Full width zone/log panels */
+    .zone-list-pane,
+    .zone-viewer-pane,
+    .log-list-pane,
+    .log-viewer-pane {
+        width: 100% !important;
+        float: none !important;
+    }
+    
+    /* Show zone/log viewer by default on mobile */
+    .zone-viewer-pane,
+    .log-viewer-pane {
+        display: block !important;
+    }
+    
+    /* Adjust panel headings */
+    .panel-head-compact,
+    .panel-head-sm {
+        padding: var(--space-2);
+        height: auto;
+    }
+    
+    /* Stack forms */
+    .form-horizontal .control-label {
+        text-align: left;
+        margin-bottom: var(--space-1);
+    }
+}
+
+/* Tablet and above */
+@media (min-width: 768px) {
+    .container {
+        padding-left: var(--space-4);
+        padding-right: var(--space-4);
+    }
+}
+
+/* Desktop and above */
+@media (min-width: 1024px) {
+    .container {
+        padding-left: var(--space-5);
+        padding-right: var(--space-5);
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1440px) {
+    .container {
+        max-width: var(--container-xl);
+    }
+}
+
+/* Utility classes for responsive display */
+.mobile-only { display: none !important; }
+.desktop-only { display: block !important; }
+
+@media (max-width: 767px) {
+    .mobile-only { display: block !important; }
+    .desktop-only { display: none !important; }
+}
