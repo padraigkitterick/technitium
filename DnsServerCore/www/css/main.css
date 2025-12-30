@@ -60,11 +60,7 @@ html, body {
     scrollbar-gutter: stable;
 }
 
-    body.modal-open {
-        padding-right: 0 !important;
-    }
-
-body {
+    bodybody {
     margin: 0px !important;
     line-height: 1.42857143 !important;
     background-color: var(--bg-body);
@@ -152,23 +148,7 @@ th a {
         display: none;
     }
 
-.auto-resize-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.center-iframe {
-    display: block;
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 640px;
-    max-height: 480px;
-}
-
-    .center-iframe iframe {
+.center-iframe iframe {
         width: 100%;
         height: 100%;
     }
@@ -401,12 +381,7 @@ th a {
     max-width: 15.625rem;
 }
 
-.dark-mode {
-    scrollbar-width: thin;
-    scrollbar-color: #555 #2c2c2e;
-}
-
-    .dark-mode ::-webkit-scrollbar {
+.dark-mode ::-webkit-scrollbar {
         width: 12px;
         height: 12px;
     }
@@ -421,12 +396,7 @@ th a {
         border: 3px solid #2c2c2e;
     }
 
-body.dark-mode {
-    background-color: #1a1a1a !important;
-    color: #dcdcdc !important;
-}
-
-.dark-mode th a,
+body.dark-mode th a,
 .dark-mode th a:hover {
     color: #dcdcdc !important;
     text-decoration: none !important;
@@ -476,12 +446,7 @@ body.dark-mode {
     color: #dcdcdc !important;
 }
 
-.dark-mode .navbar-default {
-    background-color: #2c2c2e !important;
-    border-color: #3a3a3c !important;
-}
-
-.dark-mode .dropdown-menu {
+.dark-mode .dark-mode .dropdown-menu {
     background-color: #2c2c2e !important;
     border-color: #3a3a3c !important;
 }
@@ -573,35 +538,20 @@ body.dark-mode {
     border: 1px solid #4a4a4c !important;
 }
 
-.dark-mode .btn-default {
-    color: #f5f5f7 !important;
-    background-color: #3a3a3c !important;
-    border-color: #4a4a4c !important;
-}
-
-    .dark-mode .btn-default:hover,
+.dark-mode .dark-mode .btn-default:hover,
     .dark-mode .btn-default.active {
         background-color: #4a4a4c !important;
         border-color: #5a5a5c !important;
     }
 
-.dark-mode .input-group-addon {
-    background-color: #3a3a3c !important;
-    border-color: #4a4a4c !important;
-}
-
-.dark-mode .stats-panel .stats-item,
+.dark-mode .dark-mode .stats-panel .stats-item,
 .dark-mode .zone-stats-panel .stats-item {
     color: #fff !important;
 }
 
 .dark-mode .c3-axis-x text,
 .dark-mode .c3-axis-y text,
-.dark-mode .c3-legend-item {
-    fill: #dcdcdc !important;
-}
-
-.dark-mode .c3-grid line {
+.dark-mode .dark-mode .c3-grid line {
     stroke: #4a4a4c !important;
 }
 
@@ -653,7 +603,6 @@ body.dark-mode {
    Organized by category for maintainability
    ============================================ */
 
-
 /* ============================================
    NOTE: Bootstrap 3.4.1 Utilities Available
    ============================================
@@ -679,7 +628,6 @@ body.dark-mode {
    - Application-specific components
    ============================================ */
 
-
 /* ============================================
    NOTE: Now Using Bootstrap 5.3.3 from CDN
    ============================================
@@ -692,10 +640,7 @@ body.dark-mode {
    Display: .d-none, .d-block, .d-inline, .d-inline-block, .d-flex, .d-grid
    
    Flexbox: .d-flex, .flex-row, .flex-column, .flex-wrap
-            .justify-content-{start|center|end|between|around}
-            .align-items-{start|center|end|stretch}
-   
-   Sizing:  .w-{25|50|75|100}, .h-{25|50|75|100}, .w-auto, .h-auto
+            Sizing:  .w-{25|50|75|100}, .h-{25|50|75|100}, .w-auto, .h-auto
             .mw-100, .mh-100, .vw-100, .vh-100
    
    Text:    .text-{start|center|end}, .text-{uppercase|lowercase|capitalize}
@@ -703,13 +648,9 @@ body.dark-mode {
             .text-{primary|secondary|success|danger|warning|info|light|dark|muted}
    
    Colors:  .bg-{primary|secondary|success|danger|warning|info|light|dark}
-            .text-bg-{color} for colored backgrounds with contrasting text
+            for colored backgrounds with contrasting text
    
-   Borders: .border, .border-{top|end|bottom|start}, .border-{0-5}
-            .rounded, .rounded-{top|end|bottom|start|circle|pill}
-   
-   Position: .position-{static|relative|absolute|fixed|sticky}
-             .top-{0|50|100}, .bottom-*, .start-*, .end-*
+   Borders: .border, , .rounded, Position: , .bottom-*, .start-*, .end-*
    
    Shadows: .shadow, .shadow-sm, .shadow-lg
    
@@ -725,38 +666,19 @@ body.dark-mode {
     display: inline;
 }
 /* Floats & Positioning */
-.align-text-bottom {
-    vertical-align: text-bottom;
-}
-.align-top {
-    vertical-align: top;
-}
-
-
 /* Text & Decoration */
 .no-text-decoration {
     text-decoration: none;
 }
-.text-lg-bold {
-    font-size: 16px;
-    font-weight: bold;
-}
-
 .text-danger-important {
     color: red !important;
 }
-
 
 /* Background Colors */
 .bg-light {
     background-color: var(--bg-body);
 }
-.bg-lighter {
-    background-color: var(--bg-surface-alt);
-}
-
 REFACTORED STYLES - Extracted from inline styles
-
 
 .w-65 {
     width: 4.0625rem;
@@ -774,13 +696,9 @@ REFACTORED STYLES - Extracted from inline styles
     width: 8.125rem;
 }
 
-
-
 .w-240 {
     width: 15rem;
 }
-
-
 
 .w-inherit {
     width: inherit;
@@ -803,11 +721,6 @@ REFACTORED STYLES - Extracted from inline styles
     height: 21.875rem;
 }
 
-.label-bold {
-    padding: 6px 0;
-    font-weight: bold;
-}
-
 .panel-filter-form {
     padding: 10px 10px 0 10px;
     margin-bottom: 10px;
@@ -826,8 +739,6 @@ REFACTORED STYLES - Extracted from inline styles
     overflow-x: hidden;
 }
 
-
-
 .min-w-295 {
     min-width: 18.4375rem;
 }
@@ -838,33 +749,6 @@ REFACTORED STYLES - Extracted from inline styles
 
 .min-w-100 {
     min-width: 6.25rem;
-}
-
-.text-xs-bold {
-    font-size: 10px;
-    font-weight: bold;
-}
-
-.text-xl {
-    font-size: 20px;
-}
-
-.text-black-important {
-    color: black !important;
-}
-
-
-.bg-transparent {
-    background-color: transparent;
-}
-
-
-.border-right-0 {
-    border-right: 0px;
-}
-
-.align-middle {
-    vertical-align: middle;
 }
 
 .w-96 {
@@ -879,71 +763,19 @@ REFACTORED STYLES - Extracted from inline styles
     width: 10.625rem;
 }
 
-
-
 .w-120 {
     width: 7.5rem;
 }
-
-
-
-
 
 .w-200 {
     width: 12.5rem;
 }
 
-
-
 .h-auto {
     height: auto;
 }
 
-
-
-.p-2-6 {
-    padding: 2px 6px;
-}
-
-.font-bold {
-    font-weight: bold;
-}
-
-.text-lg {
-    font-size: 18px;
-}
-
-.text-sm {
-    font-size: 14px;
-}
-
-.text-xs {
-    font-size: 10px;
-}
-
-.border-bottom-transparent-important {
-    border-bottom-color: transparent !important;
-}
-
-.text-light-important {
-    color: #f0f0f0 !important;
-}
-
-.text-gray {
-    color: #888888;
-}
-
-
 /* Padding */
-.pt-10-only {
-    padding: 10px 0 0 0;
-}
-.p-6-8 {
-    padding: 6px 8px;
-}
-.p-4-6 {
-    padding: 4px 6px;
-}
 /* Margin */
 /* Width */
 .w-100 {
@@ -970,39 +802,8 @@ REFACTORED STYLES - Extracted from inline styles
     min-height: 31.25rem;
 }
 
-
 /* Consolidated Button Styles */
-.btn-narrow,
-.btn-narrow-alt {
-    padding: 0.125rem 0;
-    width: 6.25rem; /* 100px */
-}
-
-.btn-narrow-120 {
-    padding: 0.125rem 0;
-    width: 7.5rem; /* 120px */
-}
-
-.btn-narrow-170 {
-    padding: 0.125rem 0;
-    width: 10.625rem; /* 170px */
-}
-
-.btn-compact,
 .btn-xs-50,
-.btn-xs-60 {
-    font-size: var(--font-sm);
-    padding: 0.25rem 0.375rem;
-}
-
-.btn-xs-50 {
-    width: 3.125rem; /* 50px */
-}
-
-.btn-xs-60 {
-    width: 3.75rem; /* 60px */
-}
-
 /* Panel & Modal */
 .panel-head-compact {
     height: 2.5625rem;
@@ -1022,48 +823,11 @@ REFACTORED STYLES - Extracted from inline styles
     border-right: 0px;
 }
 
-
 /* Layout Columns */
-.col-left-50 {
-    float: left;
-    width: 50%;
-    padding-right: 7px;
-}
-.col-right-50 {
-    float: right;
-    width: 50%;
-    padding-left: 7px;
-}
-.col-left-24 {
-    float: left;
-    width: 24%;
-}
-.col-right-75 {
-    float: right;
-    width: 75%;
-}
-.col-left-17 {
-    float: left;
-    width: 17%;
-}
-.col-right-82 {
-    float: right;
-    width: 82%;
-}
-
-
 /* Overflow */
-.overflow-y-auto {
-    overflow-y: auto;
-}
 .overflow-y-scroll {
     overflow-y: scroll;
 }
-.overflow-x-hidden {
-    overflow-x: hidden;
-}
-
-
 /* Utility Classes */
 
 .h-400 {
@@ -1194,17 +958,8 @@ REFACTORED STYLES - Extracted from inline styles
     padding: 0px 25px;
 }
 
-.p-2-10 {
-    padding: 2px 10px;
-}
-
 .p-40-0-20-0 {
     padding: 40px 0 20px 0;
-}
-
-.p-4-0 {
-    padding: 4px 0;
-    font-weight: bold;
 }
 
 .util-31 {
@@ -1235,7 +990,6 @@ REFACTORED STYLES - Extracted from inline styles
 .w-95 {
     width: 5.9375rem;
 }
-
 
 /* ============================================
    RESPONSIVE UTILITIES
@@ -1272,14 +1026,6 @@ REFACTORED STYLES - Extracted from inline styles
     .col-left-24,
     .col-right-75,
     .col-left-17,
-    .col-right-82 {
-        width: 100% !important;
-        float: none !important;
-        padding-left: 0 !important;
-        padding-right: 0 !important;
-        margin-bottom: var(--space-4);
-    }
-    
     /* Full width zone/log panels */
     .zone-list-pane,
     .zone-viewer-pane,
@@ -1303,11 +1049,7 @@ REFACTORED STYLES - Extracted from inline styles
     }
     
     /* Stack forms */
-    .form-horizontal .control-label {
-        text-align: left;
-        margin-bottom: var(--space-1);
-    }
-}
+    .form-horizontal }
 
 /* Tablet and above */
 @media (min-width: 768px) {
@@ -1333,14 +1075,8 @@ REFACTORED STYLES - Extracted from inline styles
 }
 
 /* Utility classes for responsive display */
-.mobile-only { display: none !important; }
-.desktop-only { display: block !important; }
-
 @media (max-width: 767px) {
-    .mobile-only { display: block !important; }
-    .desktop-only { display: none !important; }
-}
-
+    }
 
 /* Display */
 /* Common styles - reduces need for multiple classes */

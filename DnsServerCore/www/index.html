@@ -259,7 +259,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                         </div>
 
                                         <div class="mt-4">
-                                            <div class="col-left-50">
+                                            <div class="float-start w-50 pe-2">
                                                 <div class="panel panel-default mb-4">
                                                     <div class="panel-body">
                                                         <canvas id="canvasDashboardPie"></canvas>
@@ -279,7 +279,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                 </div>
                                             </div>
 
-                                            <div class="col-right-50">
+                                            <div class="float-end w-50 ps-2">
                                                 <div class="zone-stats-panel">
                                                     <div class="stats-item">
                                                         <div class="number" id="divDashboardStatsZones">10</div>
@@ -318,7 +318,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                     <div class="panel-heading panel-head-compact">
                                                         <div class="float-start p-2-8">Top Clients</div>
                                                         <div class="float-end">
-                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopClients', 1000);" class="btn btn-secondary btn-compact">More</button>
+                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopClients', 1000);" class="btn btn-secondary btn-sm p-1">More</button>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -340,12 +340,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                         </div>
 
                                         <div class="mt-4">
-                                            <div class="col-left-50">
+                                            <div class="float-start w-50 pe-2">
                                                 <div class="panel panel-default mb-0">
                                                     <div class="panel-heading panel-head-compact">
                                                         <div class="float-start p-2-8">Top Domains</div>
                                                         <div class="float-end">
-                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopDomains', 1000);" class="btn btn-secondary btn-compact">More</button>
+                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopDomains', 1000);" class="btn btn-secondary btn-sm p-1">More</button>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -363,12 +363,12 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                 </div>
                                             </div>
 
-                                            <div class="col-right-50">
+                                            <div class="float-end w-50 ps-2">
                                                 <div class="panel panel-default mb-0">
                                                     <div class="panel-heading panel-head-compact">
                                                         <div class="float-start p-2-8">Top Blocked Domains</div>
                                                         <div class="float-end">
-                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopBlockedDomains', 1000);" class="btn btn-secondary btn-compact">More</button>
+                                                            <button type="button" data-loading-text="More" onclick="showTopStats('TopBlockedDomains', 1000);" class="btn btn-secondary btn-sm p-1">More</button>
                                                         </div>
                                                         <div class="clearfix"></div>
                                                     </div>
@@ -398,7 +398,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                         <div class="form-inline mb-2">
                                             <div class="float-end">
                                                 <div class="form-group mr-0">
-                                                    <button type="button" onclick="showAddZoneModal();" class="btn btn-primary btn-narrow">Add Zone</button>
+                                                    <button type="button" onclick="showAddZoneModal();" class="btn btn-primary btn-sm px-2">Add Zone</button>
                                                     <select id="optZonesClusterNode" class="form-control cluster-node-dropdown" onchange="refreshZones();"></select>
                                                 </div>
                                             </div>
@@ -504,22 +504,22 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                         </div>
 
                                         <div class="py-10">
-                                            <h3 class="my-4"><span id="titleEditZone" class="me-3">example.com</span><a href="#" onclick="showEditZone($('#titleEditZone').attr('data-zone'), $('#txtEditZonePageNumber').val(), $('#txtEditZoneFilterName').val(), $('#txtEditZoneFilterType').val()); return false;"><span aria-d-none="true" class="glyphicon glyphicon-refresh text-xl"></span></a></h3>
+                                            <h3 class="my-4"><span id="titleEditZone" class="me-3">example.com</span><a href="#" onclick="showEditZone($('#titleEditZone').attr('data-zone'), $('#txtEditZonePageNumber').val(), $('#txtEditZoneFilterName').val(), $('#txtEditZoneFilterType').val()); return false;"><span aria-d-none="true" class="glyphicon glyphicon-refresh fs-4"></span></a></h3>
                                             <div class="float-start">
                                                 <span id="titleEditZoneType" class="label label-default">Primary</span>
                                                 <span id="titleEditZoneDnssecStatus" class="label label-default">DNSSEC</span>
                                                 <span id="titleEditZoneStatus" class="label label-success">Enabled</span>
                                                 <span id="titleEditZoneCatalog" class="label label-default">catalog</span>
-                                                <div id="titleEditZoneExpiry" class="pt-2 text-xs-bold">Expiry: 01 Jan 2020 00:00:00</div>
+                                                <div id="titleEditZoneExpiry" class="pt-2 fs-6 fw-bold">Expiry: 01 Jan 2020 00:00:00</div>
                                             </div>
                                             <div class="float-end py-2">
-                                                <button id="btnEditZoneAddRecord" type="button" onclick="showAddRecordModal();" class="btn btn-primary btn-narrow">Add Record</button>
-                                                <button id="btnEnableZoneEditZone" type="button" onclick="enableZone(this);" class="btn btn-secondary btn-narrow">Enable Zone</button>
-                                                <button id="btnDisableZoneEditZone" type="button" onclick="disableZone(this);" class="btn btn-warning btn-narrow">Disable Zone</button>
-                                                <button id="btnEditZoneDeleteZone" type="button" onclick="deleteZone(this);" class="btn btn-danger btn-narrow">Delete Zone</button>
-                                                <button id="btnZoneResync" type="button" onclick="resyncZone(this, $('#titleEditZone').attr('data-zone'));" data-loading-text="Resyncing..." class="btn btn-primary btn-narrow">Resync</button>
+                                                <button id="btnEditZoneAddRecord" type="button" onclick="showAddRecordModal();" class="btn btn-primary btn-sm px-2">Add Record</button>
+                                                <button id="btnEnableZoneEditZone" type="button" onclick="enableZone(this);" class="btn btn-secondary btn-sm px-2">Enable Zone</button>
+                                                <button id="btnDisableZoneEditZone" type="button" onclick="disableZone(this);" class="btn btn-warning btn-sm px-2">Disable Zone</button>
+                                                <button id="btnEditZoneDeleteZone" type="button" onclick="deleteZone(this);" class="btn btn-danger btn-sm px-2">Delete Zone</button>
+                                                <button id="btnZoneResync" type="button" onclick="resyncZone(this, $('#titleEditZone').attr('data-zone'));" data-loading-text="Resyncing..." class="btn btn-primary btn-sm px-2">Resync</button>
                                                 <div id="divOptionsMenu" class="btn-group">
-                                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-narrow">
+                                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-sm px-2">
                                                         Options <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
@@ -530,9 +530,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                         <li id="lnkZoneOptions"><a href="#" onclick="$('#btnSaveZoneOptions').attr('data-zones-row-id', null); showZoneOptionsModal($('#titleEditZone').attr('data-zone')); return false;">Zone Options</a></li>
                                                     </ul>
                                                 </div>
-                                                <button id="btnZonePermissions" type="button" onclick="showZonePermissionsModal($('#titleEditZone').attr('data-zone'));" class="btn btn-primary btn-narrow">Permissions</button>
+                                                <button id="btnZonePermissions" type="button" onclick="showZonePermissionsModal($('#titleEditZone').attr('data-zone'));" class="btn btn-primary btn-sm px-2">Permissions</button>
                                                 <div id="divZoneDnssecOptions" class="btn-group">
-                                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-narrow">
+                                                    <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-sm px-2">
                                                         DNSSEC <span class="caret"></span>
                                                     </button>
                                                     <ul class="dropdown-menu">
@@ -762,8 +762,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                     <div id="divViewApps">
                                         <div class="form-inline">
                                             <div class="float-end">
-                                                <button type="button" onclick="showStoreAppsModal();" class="btn btn-primary btn-narrow">App Store</button>
-                                                <button type="button" onclick="showInstallAppModal();" class="btn btn-primary btn-narrow">Install</button>
+                                                <button type="button" onclick="showStoreAppsModal();" class="btn btn-primary btn-sm px-2">App Store</button>
+                                                <button type="button" onclick="showInstallAppModal();" class="btn btn-primary btn-sm px-2">Install</button>
                                             </div>
                                             <div class="clearfix"></div>
                                         </div>
@@ -863,8 +863,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                         </div>
                                         <div>
                                             <div class="form-group">
-                                                <button type="submit" id="btnDnsClientResolve" data-loading-text="Resolving..." onclick="resolveQuery(); return false;" class="btn btn-primary btn-narrow">Resolve</button>
-                                                <button type="button" id="btnDnsClientImport" data-loading-text="Importing..." onclick="resolveQuery(true);" class="btn btn-warning btn-narrow">Import</button>
+                                                <button type="submit" id="btnDnsClientResolve" data-loading-text="Resolving..." onclick="resolveQuery(); return false;" class="btn btn-primary btn-sm px-2">Resolve</button>
+                                                <button type="button" id="btnDnsClientImport" data-loading-text="Importing..." onclick="resolveQuery(true);" class="btn btn-warning btn-sm px-2">Import</button>
                                                 <select id="optDnsClientClusterNode" class="form-control cluster-node-dropdown"></select>
                                             </div>
                                         </div>
@@ -1895,7 +1895,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                                     <span>minutes</span>
                                                                 </div>
                                                                 <div class="pt-2">
-                                                                    <button id="btnTemporaryDisableBlockingNow" type="button" data-loading-text="Disabling..." onclick="temporaryDisableBlockingNow();" class="btn btn-secondary btn-narrow-170">Temporary Disable Now</button>
+                                                                    <button id="btnTemporaryDisableBlockingNow" type="button" data-loading-text="Disabling..." onclick="temporaryDisableBlockingNow();" class="btn btn-secondary btn-sm px-2-170">Temporary Disable Now</button>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -1979,7 +1979,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                             <label for="lblBlockListNextUpdatedOn" class="col-sm-3 form-label">Block List Next Update On</label>
                                                             <div class="col-sm-6 pt-2">
                                                                 <span id="lblBlockListNextUpdatedOn" class="util-7"></span>
-                                                                <button id="btnUpdateBlockListsNow" type="button" data-loading-text="Updating..." onclick="forceUpdateBlockLists();" class="btn btn-secondary btn-narrow-alt">Update Now</button>
+                                                                <button id="btnUpdateBlockListsNow" type="button" data-loading-text="Updating..." onclick="forceUpdateBlockLists();" class="btn btn-secondary btn-sm px-2-alt">Update Now</button>
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8 pt-2">Click the 'Update Now' button to reset the next update schedule and force download and update of the block lists.</div>
                                                         </div>
@@ -2328,7 +2328,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <div id="divDhcpViewScopes" class="mt-3">
 
                                                 <div class="float-end py-2">
-                                                    <button type="button" onclick="showAddDhcpScope();" class="btn btn-primary btn-narrow">Add Scope</button>
+                                                    <button type="button" onclick="showAddDhcpScope();" class="btn btn-primary btn-sm px-2">Add Scope</button>
                                                 </div>
                                                 <div class="clearfix"></div>
 
@@ -2748,7 +2748,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                             <div id="divAdminSessionsView" class="mt-3">
                                                 <div class="form-inline float-end py-2">
-                                                    <button id="btnAdminSessionsCreateToken" type="button" onclick="showCreateApiTokenModal();" class="btn btn-primary btn-narrow">Create Token</button>
+                                                    <button id="btnAdminSessionsCreateToken" type="button" onclick="showCreateApiTokenModal();" class="btn btn-primary btn-sm px-2">Create Token</button>
                                                     <select id="optAdminSessionsClusterNode" class="form-control cluster-node-dropdown" onchange="refreshAdminSessions();"></select>
                                                 </div>
 
@@ -2779,7 +2779,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                             <div id="divAdminUsersView" class="mt-3">
                                                 <div class="float-end py-2">
-                                                    <button type="button" onclick="showAddUserModal();" class="btn btn-primary btn-narrow">Add User</button>
+                                                    <button type="button" onclick="showAddUserModal();" class="btn btn-primary btn-sm px-2">Add User</button>
                                                 </div>
 
                                                 <div class="clearfix"></div>
@@ -2810,7 +2810,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                             <div id="divAdminGroupsView" class="mt-3">
                                                 <div class="float-end py-2">
-                                                    <button type="button" onclick="showAddGroupModal();" class="btn btn-primary btn-narrow">Add Group</button>
+                                                    <button type="button" onclick="showAddGroupModal();" class="btn btn-primary btn-sm px-2">Add Group</button>
                                                 </div>
 
                                                 <div class="clearfix"></div>
@@ -2860,7 +2860,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <div id="divAdminClusterView" class="mt-3">
                                                 <div class="form-inline float-end py-2">
                                                     <div id="divAdminClusterInitialize" class="btn-group">
-                                                        <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-narrow">
+                                                        <button type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="btn btn-primary dropdown-toggle btn-sm px-2">
                                                             Initialize <span class="caret"></span>
                                                         </button>
                                                         <ul class="dropdown-menu">
@@ -2869,10 +2869,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                         </ul>
                                                     </div>
 
-                                                    <button id="btnClusterResync" type="button" onclick="resyncCluster(this);" data-loading-text="Resyncing..." class="btn btn-primary btn-narrow">Resync</button>
-                                                    <button id="btnClusterOptions" type="button" onclick="showClusterOptionsModal();" class="btn btn-primary btn-narrow">Options</button>
-                                                    <button id="btnClusterLeave" type="button" onclick="showLeaveClusterModal();" class="btn btn-warning btn-narrow">Leave Cluster</button>
-                                                    <button id="btnClusterDelete" type="button" onclick="showDeleteClusterModal();" class="btn btn-danger btn-narrow">Delete Cluster</button>
+                                                    <button id="btnClusterResync" type="button" onclick="resyncCluster(this);" data-loading-text="Resyncing..." class="btn btn-primary btn-sm px-2">Resync</button>
+                                                    <button id="btnClusterOptions" type="button" onclick="showClusterOptionsModal();" class="btn btn-primary btn-sm px-2">Options</button>
+                                                    <button id="btnClusterLeave" type="button" onclick="showLeaveClusterModal();" class="btn btn-warning btn-sm px-2">Leave Cluster</button>
+                                                    <button id="btnClusterDelete" type="button" onclick="showDeleteClusterModal();" class="btn btn-danger btn-sm px-2">Delete Cluster</button>
                                                     <select id="optAdminClusterNode" class="form-control cluster-node-dropdown" onchange="refreshAdminCluster();"></select>
                                                 </div>
 
@@ -2928,8 +2928,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                     <div class="panel-heading panel-head-sm">
                                                         <div id="txtLogViewerTitle" class="p-2">20171012</div>
                                                         <div class="float-end">
-                                                            <button type="button" data-loading-text="Download" onclick="downloadLog();" class="btn btn-secondary text-sm p-2-6">Download</button>
-                                                            <button id="btnDeleteLog" type="button" data-loading-text="Delete" onclick="deleteLog();" class="btn btn-danger text-sm p-2-6">Delete</button>
+                                                            <button type="button" data-loading-text="Download" onclick="downloadLog();" class="btn btn-secondary fs-6 p-2">Download</button>
+                                                            <button id="btnDeleteLog" type="button" data-loading-text="Delete" onclick="deleteLog();" class="btn btn-danger fs-6 p-2">Delete</button>
                                                         </div>
                                                     </div>
 
@@ -3219,7 +3219,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             <div class="form-group">
                                 <label for="lblMyProfile2FAStatus" class="col-sm-4 form-label">2FA Status</label>
                                 <div class="col-sm-7">
-                                    <div id="lblMyProfile2FAStatus" class="label-bold"></div>
+                                    <div id="lblMyProfile2FAStatus" class="fw-bold"></div>
                                 </div>
                             </div>
 
@@ -3249,8 +3249,8 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                 </div>
                             </div>
 
-                            <div class="well well-sm bg-lighter">
-                                <p class="text-lg-bold">Active Sessions</p>
+                            <div class="well well-sm bg-light bg-opacity-50">
+                                <p class="fs-5 fw-bold">Active Sessions</p>
                                 <table id="tableMyProfileActiveSessions" class="table table-hover mb-0">
                                     <thead>
                                         <tr>
@@ -3449,7 +3449,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                             <div class="form-group">
                                 <label for="lblConfigure2FAStatus" class="col-sm-3 form-label">2FA Status</label>
                                 <div class="col-sm-8">
-                                    <div id="lblConfigure2FAStatus" class="label-bold"></div>
+                                    <div id="lblConfigure2FAStatus" class="fw-bold"></div>
                                 </div>
                             </div>
 
@@ -3521,15 +3521,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                 <div class="modal-body">
                     <div class="util-6">
                         <div id="lblUpdateMessage" class="mb-3"></div>
-                        <a id="lnkUpdateDownload" href="#" target="_blank" class="font-bold text-lg">Download Now!</a>
-                        <a id="lnkUpdateInstructions" href="#" target="_blank" class="font-bold text-lg">Update Instructions</a>
+                        <a id="lnkUpdateDownload" href="#" target="_blank" class="fw-bold fs-5">Download Now!</a>
+                        <a id="lnkUpdateInstructions" href="#" target="_blank" class="fw-bold fs-5">Update Instructions</a>
                     </div>
                     <div class="mb-3">
-                        <div class="font-bold">Update Version: <span id="lblUpdateVersion"></span></div>
+                        <div class="fw-bold">Update Version: <span id="lblUpdateVersion"></span></div>
                         <div>Current Version: <span id="lblCurrentVersion"></span></div>
                     </div>
                     <div class="mb-3">
-                        <a id="lnkUpdateChangeLog" href="#" target="_blank" class="font-bold">Read Change Logs</a>
+                        <a id="lnkUpdateChangeLog" href="#" target="_blank" class="fw-bold">Read Change Logs</a>
                     </div>
                     <div class="mb-3">
                         Note! It is highly recommended to Backup Settings before installing the update.
@@ -5093,7 +5093,7 @@ ns1.example.com ([2001:db8::])
                                     </div>
 
                                     <div id="divDynamicUpdateSecurityPolicy" class="well well-sm form-horizontal">
-                                        <p class="text-lg-bold">Security Policy</p>
+                                        <p class="fs-5 fw-bold">Security Policy</p>
 
                                         <table id="tableDynamicUpdateSecurityPolicy" class="table table-hover">
                                             <thead>
@@ -5480,8 +5480,8 @@ MII...
                             </table>
 
                             <div>
-                                <button type="button" data-bs-toggle="collapse" data-bs-target="#divDnssecPropertiesAddKey" aria-expanded="false" aria-controls="divDnssecPropertiesAddKey" class="btn btn-primary btn-narrow-120">Add Private Key</button>
-                                <button id="btnDnssecPropertiesPublishKeys" type="button" data-loading-text="Publishing..." onclick="publishAllDnssecPrivateKeys(this);" class="btn btn-warning btn-narrow-120">Publish All Keys</button>
+                                <button type="button" data-bs-toggle="collapse" data-bs-target="#divDnssecPropertiesAddKey" aria-expanded="false" aria-controls="divDnssecPropertiesAddKey" class="btn btn-primary btn-sm px-2-120">Add Private Key</button>
+                                <button id="btnDnssecPropertiesPublishKeys" type="button" data-loading-text="Publishing..." onclick="publishAllDnssecPrivateKeys(this);" class="btn btn-warning btn-sm px-2-120">Publish All Keys</button>
                             </div>
 
                             <div id="divDnssecPropertiesAddKey" class="collapse">
@@ -5675,7 +5675,7 @@ MII...
 
                             <div class="form-group mb-2">
                                 <div class="col-sm-offset-4 col-sm-8">
-                                    <button id="btnDnssecPropertiesChangeNxProof" type="button" data-loading-text="Changing..." onclick="changeDnssecNxProof(this);" class="btn btn-warning btn-narrow-alt">Change</button>
+                                    <button id="btnDnssecPropertiesChangeNxProof" type="button" data-loading-text="Changing..." onclick="changeDnssecNxProof(this);" class="btn btn-warning btn-sm px-2-alt">Change</button>
                                 </div>
                             </div>
                         </div>
@@ -5689,7 +5689,7 @@ MII...
                                         <span>seconds (default 3600/1h)</span>
                                     </div>
                                     <div class="mt-3">
-                                        <button type="button" data-loading-text="Updating..." onclick="updateDnssecDnsKeyTtl(this);" class="btn btn-secondary btn-narrow-alt">Update TTL</button>
+                                        <button type="button" data-loading-text="Updating..." onclick="updateDnssecDnsKeyTtl(this);" class="btn btn-secondary btn-sm px-2-alt">Update TTL</button>
                                     </div>
                                 </div>
                                 <div class="col-sm-offset-4 col-sm-8 pt-2">
@@ -6313,7 +6313,7 @@ MII...
                             <div class="form-group">
                                 <label for="lblUserDetails2FAStatus" class="col-sm-4 form-label">2FA Status</label>
                                 <div class="col-sm-7">
-                                    <div id="lblUserDetails2FAStatus" class="label-bold"></div>
+                                    <div id="lblUserDetails2FAStatus" class="fw-bold"></div>
                                 </div>
                             </div>
 
@@ -6344,8 +6344,8 @@ MII...
                                 </div>
                             </div>
 
-                            <div class="well well-sm bg-lighter">
-                                <p class="text-lg-bold">Active Sessions</p>
+                            <div class="well well-sm bg-light bg-opacity-50">
+                                <p class="fs-5 fw-bold">Active Sessions</p>
                                 <table id="tableUserDetailsActiveSessions" class="table table-hover mb-0">
                                     <thead>
                                         <tr>
@@ -6470,7 +6470,7 @@ MII...
                         <div id="divEditPermissionsLoader" class="h-500"></div>
 
                         <div id="divEditPermissionsViewer" class="modal-body-scroll">
-                            <div class="well well-sm bg-lighter">
+                            <div class="well well-sm bg-light bg-opacity-50">
                                 <div class="form-group">
                                     <label class="col-sm-3 form-label">User Permissions</label>
                                     <div class="col-sm-9">
@@ -6492,7 +6492,7 @@ MII...
                                 </div>
                             </div>
 
-                            <div class="well well-sm bg-lighter">
+                            <div class="well well-sm bg-light bg-opacity-50">
                                 <div class="form-group">
                                     <label class="col-sm-3 form-label">Group Permissions</label>
                                     <div class="col-sm-9">
