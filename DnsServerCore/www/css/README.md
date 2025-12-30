@@ -1,30 +1,113 @@
 # CSS Organization and Class Reference
 
-This document describes the organization and structure of the refactored CSS in `main.css`.
+This document describes the organization and structure of the refactored and responsive CSS in `main.css`.
 
 ## Overview
 
-The CSS has been refactored to eliminate all inline styles (767 instances) from the HTML and organize them into reusable, maintainable classes. The file is structured in clear sections with descriptive comments.
+The CSS has been completely refactored to:
+1. Eliminate all inline styles (767 instances) 
+2. Introduce CSS variables for maintainability
+3. Make the layout fully responsive (mobile to desktop)
+4. Use rem units for accessibility and scalability
+5. Consolidate similar styles to reduce duplication
+
+The file is structured in clear sections with descriptive comments.
 
 ## CSS Structure
 
-### Original Styles (Lines 1-589)
-Contains the original application-specific styles including:
-- HTML/Body base styles
-- Header styles
-- Content and container styles
+### CSS Variables (Lines 1-62)
+Design system tokens for consistency:
+- Color palette (primary, success, danger, grayscale)
+- Spacing scale (rem-based: --space-1 through --space-10)
+- Typography scale (--font-xs through --font-2xl)
+- Layout dimensions (--container-max, --header-height, etc.)
+- Border radius, shadows
+
+### Base Styles (Lines 63-589)
+Application-specific styles using CSS variables:
+- HTML/Body with responsive background
+- Header with fluid layout
+- Responsive container (max-width, not min-width)
 - Footer styles
-- Navigation and menu styles
-- Panel and modal styles
+- Navigation and menus
+- Panels and modals
 - Stats panels and visualizations
-- Zone management styles
-- Form styles
-- Dark mode styles
+- Zone management
+- Forms
+- Dark mode overrides
 
-### Refactored Styles (Lines 590+)
-Organized into logical categories for easy maintenance.
+### Refactored Utilities (Lines 590+)
+Organized utility classes by category:
+- Display & Visibility
+- Layout & Positioning
+- Spacing (padding/margin with rem units)
+- Width/Height (rem-based)
+- Typography
+- Buttons (consolidated)
+- And more...
 
-## Class Categories
+### Responsive Breakpoints (Lines 1430+)
+Mobile-first responsive design:
+- Mobile: < 768px (stacked layouts)
+- Tablet: 768px+ 
+- Desktop: 1024px+
+- Large: 1200px+
+- XL: 1440px+
+
+## Design System
+
+### CSS Variables
+
+The design system uses CSS variables for consistency and easy theming:
+
+#### Colors
+```css
+--color-primary: #6699ff;
+--color-success: #5cb85c;
+--color-danger: #d9534f;
+--gray-100 through --gray-900: Grayscale palette
+```
+
+#### Spacing (Rem-based)
+```css
+--space-1: 0.25rem;  /* 4px */
+--space-2: 0.5rem;   /* 8px */
+--space-3: 0.75rem;  /* 12px */
+--space-4: 1rem;     /* 16px */
+--space-5: 1.25rem;  /* 20px */
+--space-6: 1.5rem;   /* 24px */
+--space-8: 2rem;     /* 32px */
+--space-10: 2.5rem;  /* 40px */
+```
+
+#### Typography
+```css
+--font-xs: 0.625rem;  /* 10px */
+--font-sm: 0.75rem;   /* 12px */
+--font-md: 0.875rem;  /* 14px */
+--font-lg: 1rem;      /* 16px */
+--font-xl: 1.125rem;  /* 18px */
+--font-2xl: 1.5rem;   /* 24px */
+```
+
+#### Layout
+```css
+--container-max: 73.125rem;  /* 1170px */
+--container-xl: 90rem;       /* 1440px */
+--header-height: 2rem;       /* 32px */
+--footer-height: 3.4375rem;  /* 55px */
+```
+
+### Usage Example
+
+```css
+.my-component {
+    padding: var(--space-4);
+    font-size: var(--font-md);
+    color: var(--color-primary);
+    border-radius: var(--radius);
+}
+```
 
 ### Display & Visibility
 - `.hidden` - Hide elements (display: none)
@@ -153,7 +236,53 @@ Two-column layout helpers:
 ### Utility Classes
 Additional one-off utility classes for specific use cases that don't fit the standard pattern. These follow semantic naming where possible or use util-{number} for complex combinations.
 
-## Naming Conventions
+## Responsive Design
+
+The CSS uses a mobile-first approach with the following breakpoints:
+
+### Mobile (< 768px)
+- Container: Full width with minimal padding
+- Stats panels: 2 columns (48% width)
+- Layout columns: Stack vertically (100% width)
+- Zone/log panels: Full width
+- Forms: Stack labels and inputs
+
+### Tablet (768px+)
+- Container: Increased padding
+- Stats maintain multi-column layout
+- Forms use horizontal layout
+
+### Desktop (1024px+)
+- Container: Max padding
+- Full multi-column layouts active
+- Zone viewer panels at designed widths
+
+### Large (1200px+)
+- Container max-width: 73.125rem (1170px)
+
+### Extra Large (1440px+)
+- Container max-width: 90rem (1440px)
+
+### Example Responsive Classes
+
+```css
+/* Mobile only */
+@media (max-width: 767px) {
+    .col-left-50, .col-right-50 {
+        width: 100% !important;
+        float: none !important;
+    }
+}
+
+/* Desktop and up */
+@media (min-width: 1024px) {
+    .zone-list-pane {
+        width: 24%;
+    }
+}
+```
+
+## Class Categories
 
 ### Spacing
 - Pattern: `{property}-{value}`
