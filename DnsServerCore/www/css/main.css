@@ -99,9 +99,9 @@ th a {
 
 #header {
     background-color: var(--color-primary);
-    height: 2rem;
-    margin-bottom: -32px;
-    box-shadow: 0px 1px 15px 0px #888888;
+    height: var(--header-height);
+    margin-bottom: calc(-1 * var(--header-height));
+    box-shadow: 0 1px 15px 0 var(--gray-500);
     width: 100%;
     /* Responsive - no min-width */
 }
@@ -181,12 +181,12 @@ th a {
 
 #footer {
     background-color: var(--bg-panel);
-    padding: 20px 0px 20px 0px;
-    margin-top: -55px;
-    box-shadow: 0px 2px 15px 1px #888888;
+    padding: var(--space-5) 0;
+    margin-top: calc(-1 * var(--footer-height));
+    box-shadow: 0 2px 15px 1px var(--gray-500);
     clear: both;
     position: relative;
-    height: 3.4375rem;
+    height: var(--footer-height);
     /* Responsive */
 }
 
