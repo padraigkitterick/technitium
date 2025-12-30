@@ -512,20 +512,14 @@ body.dark-mode th a,
     border: 1px solid #4a4a4c !important;
 }
 
-.dark-mode .dark-mode .btn-default:hover,
-    .dark-mode .btn-default.active {
-        background-color: #4a4a4c !important;
-        border-color: #5a5a5c !important;
-    }
+
 
 .dark-mode .dark-mode .stats-panel .stats-item,
 .dark-mode .zone-stats-panel .stats-item {
     color: #fff !important;
 }
 
-.dark-mode .c3-axis-x text,
-.dark-mode .c3-axis-y text,
-.dark-mode .dark-mode .c3-grid line {
+.dark-mode .c3-axis-x text {
     stroke: #4a4a4c !important;
 }
 
@@ -715,7 +709,6 @@ body.dark-mode th a,
 }
 
 /* Consolidated Button Styles */
-.btn-xs-50,
 /* Panel & Modal */
 .panel-head-compact {
     height: 2.5625rem;
@@ -876,11 +869,6 @@ body.dark-mode th a,
     }
     
     /* Stack column layouts */
-    .col-left-50,
-    .col-right-50,
-    .col-left-24,
-    .col-right-75,
-    .col-left-17,
     /* Full width zone/log panels */
     .zone-list-pane,
     .zone-viewer-pane,
@@ -904,7 +892,6 @@ body.dark-mode th a,
     }
     
     /* Stack forms */
-    .form-horizontal }
 
 /* Tablet and above */
 @media (min-width: 768px) {
@@ -935,7 +922,6 @@ body.dark-mode th a,
 
 /* Display */
 /* Common styles - reduces need for multiple classes */
-.form-input,
 .form-control {
     font-size: var(--font-md);
     padding: var(--space-2) var(--space-3);
@@ -943,7 +929,7 @@ body.dark-mode th a,
     border-radius: var(--radius);
 }
 
-.form-input:focus,
+
 .form-control:focus {
     outline: none;
     border-color: var(--color-primary);
