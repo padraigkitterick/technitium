@@ -51,7 +51,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 <body>
     <div id="header">
         <div id="mnuUser" class="menu dropdown d-none">
-            <a href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle no-text-decoration">
+            <a href="#" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle text-decoration-none">
                 <span class="menu-title">
                     <span class="glyphicon glyphicon-user" aria-d-none="true"></span>
                     <span id="mnuUserDisplayName"></span>
@@ -1978,7 +1978,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                         <div class="form-group">
                                                             <label for="lblBlockListNextUpdatedOn" class="col-sm-3 form-label">Block List Next Update On</label>
                                                             <div class="col-sm-6 pt-2">
-                                                                <span id="lblBlockListNextUpdatedOn" class="util-7"></span>
+                                                                <span id="lblBlockListNextUpdatedOn" class="me-3"></span>
                                                                 <button id="btnUpdateBlockListsNow" type="button" data-loading-text="Updating..." onclick="forceUpdateBlockLists();" class="btn btn-secondary btn-sm px-2-alt">Update Now</button>
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-8 pt-2">Click the 'Update Now' button to reset the next update schedule and force download and update of the block lists.</div>
@@ -2352,7 +2352,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             </div>
 
                                             <div id="divDhcpEditScope" class="d-none">
-                                                <form class="util-8" onsubmit="return false;">
+                                                <form class="mt-3 mb-0" onsubmit="return false;">
 
                                                     <h4 class="py-10" id="titleDhcpEditScope">Edit Scope</h4>
 
@@ -2507,7 +2507,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                                         <input id="chkUseThisDnsServer" type="checkbox" onclick="$('#txtDhcpScopeDnsServers').prop('disabled', $(this).prop('checked'));"> Use This DNS Server
                                                                     </label>
                                                                 </div>
-                                                                <div class="util-24">Enable this option to automatically use this DNS Server.</div>
+                                                                <div class="pt-2 ps-4 mb-3">Enable this option to automatically use this DNS Server.</div>
                                                             </div>
                                                             <div class="col-sm-offset-3 col-sm-3">
                                                                 <textarea id="txtDhcpScopeDnsServers" class="form-control" rows="2" spellcheck="false"></textarea>
@@ -2944,7 +2944,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                         <div id="logsTabPaneQueryLogs" class="tab-pane active pt-4">
 
-                                            <form id="frmQueryLogs" class="form-inline well util-22">
+                                            <form id="frmQueryLogs" class="form-inline well pb-2">
                                                 <div class="form-group">
                                                     <label for="optQueryLogsAppName">App Name</label>
                                                     <select class="form-control" id="optQueryLogsAppName">
@@ -3519,7 +3519,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                     <h4 class="modal-title" id="lblUpdateAvailableTitle">New Update Available</h4>
                 </div>
                 <div class="modal-body">
-                    <div class="util-6">
+                    <div class="mb-4">
                         <div id="lblUpdateMessage" class="mb-3"></div>
                         <a id="lnkUpdateDownload" href="#" target="_blank" class="fw-bold fs-5">Download Now!</a>
                         <a id="lnkUpdateInstructions" href="#" target="_blank" class="fw-bold fs-5">Update Instructions</a>
@@ -3846,7 +3846,7 @@ ns1.example.com ([2001:db8::])
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <div class="float-start util-31">
+                        <div class="float-start text-start">
                             <a href="https://blog.technitium.com/2022/06/how-to-self-host-your-own-domain-name.html" target="_blank">Help: How To Self Host Your Own Domain Name</a>
                         </div>
                         <div class="float-end">
@@ -3876,7 +3876,7 @@ ns1.example.com ([2001:db8::])
                                 <label for="txtAddEditRecordName" class="col-sm-4 form-label">Name</label>
                                 <div class="col-sm-7">
                                     <input id="txtAddEditRecordName" type="text" class="form-control" placeholder="@">
-                                    <div class="util-11">.<span id="lblAddEditRecordZoneName">example.com</span></div>
+                                    <div class="mt-2 fw-bold">.<span id="lblAddEditRecordZoneName">example.com</span></div>
                                 </div>
                             </div>
 
@@ -4721,7 +4721,7 @@ MII...
 
                     <div id="divZoneOptionsLoader" class="h-500"></div>
 
-                    <div id="divZoneOptions" class="util-13">
+                    <div id="divZoneOptions" class="mh-100">
 
                         <div>
                             <ul class="nav nav-tabs" role="tablist">
@@ -5089,7 +5089,7 @@ ns1.example.com ([2001:db8::])
                                         </div>
 
                                         <div>Note! Dynamic updates should be allowed only to trusted IP addresses since they will be able to add/delete records in the zone.</div>
-                                        <div class="util-23">Warning! If no security policy is configured in the Primary Zone then access will be provided only based on the options selected here. Thus setting up a security policy in the Primary Zone is highly recommended.</div>
+                                        <div class="pt-3">Warning! If no security policy is configured in the Primary Zone then access will be provided only based on the options selected here. Thus setting up a security policy in the Primary Zone is highly recommended.</div>
                                     </div>
 
                                     <div id="divDynamicUpdateSecurityPolicy" class="well well-sm form-horizontal">
@@ -5485,7 +5485,7 @@ MII...
                             </div>
 
                             <div id="divDnssecPropertiesAddKey" class="collapse">
-                                <div class="panel panel-default util-5">
+                                <div class="panel panel-default mb-0 mt-3 pt-3">
                                     <div class="form-group">
                                         <label for="optDnssecPropertiesAddKeyKeyType" class="col-sm-4 form-label">Key Type</label>
                                         <div class="col-sm-8">
@@ -5774,7 +5774,7 @@ MII...
 
                         <div id="divStoreAppsLoader" class="h-500"></div>
 
-                        <div id="divStoreApps" class="util-15">
+                        <div id="divStoreApps" class="overflow-auto d-none">
                             <table class="table table-hover">
                                 <thead>
                                     <tr>
@@ -6144,7 +6144,7 @@ MII...
 
                     <div id="divTopStatsLoader" class="h-500"></div>
 
-                    <div id="divTopStatsData" class="util-14">
+                    <div id="divTopStatsData" class="overflow-auto">
                         <table id="tableTopStatsClients" class="table table-hover">
                             <thead>
                                 <tr>
