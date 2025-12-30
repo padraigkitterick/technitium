@@ -79,9 +79,17 @@ div#divDashboard > div:nth-child(2) {
     .container .pageLogin {
         padding: 80px 10px 0 10px;
     }
+    
+    nav {
+        margin: 4px 0px;
+    }
 
     .nav > li > a {
         padding: 5px 8px !important;
+    }
+
+    button {
+        margin-bottom: 4px !important;
     }
 
     /* Make zone panes stack vertically on mobile */
@@ -144,7 +152,7 @@ div#divDashboard > div:nth-child(2) {
     }
 
     /* Make specific tables flow row contents vertically */
-    div#divViewZones, div#divEditZone, div#divMyProfileViewer {
+    div#divViewZones, div#divEditZone, div#divMyProfileViewer, div#divAdminSessionsView, div#divAdminUsersView, div#divAdminGroupsView, div#divAdminClusterView, div#divQueryLogsTable, div#divDhcpLeases, div#divDhcpViewScopes {
         table, thead, tbody, th, td, tfoot {
             display: block;
             width: 100%;
@@ -211,6 +219,9 @@ div#divDashboard > div:nth-child(2) {
         width: auto !important;
         max-width: 300px;
     }
+    input#txtQueryLogQName{
+        min-width: 218px !important;
+    }
 
     /* Make dropdowns responsive */
     .cluster-node-dropdown {
@@ -257,7 +268,7 @@ div#divDashboard > div:nth-child(2) {
         margin-top: 15px !important;
     }
 
-    div#lstCachedZones, div#lstAllowedZones, div#lstBlockedZones {
+    div#lstCachedZones, div#lstAllowedZones, div#lstBlockedZones, div.log-list-pane {
        max-height: 20vh;
        overflow: scroll;
     }
