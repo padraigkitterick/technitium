@@ -606,9 +606,19 @@ body.dark-mode th a,
    NOTE: Now Using Bootstrap 5.3.3 from CDN
    ============================================
    
-   Bootstrap 5 provides extensive utility classes:
+   Bootstrap 5 provides extensive utility classes that replace many custom utilities.
+   Use these Bootstrap classes instead of creating custom ones:
    
-   Spacing: .m-{0-5}, .mt-*, .mb-*, .ms-*, .me-*, .mx-*, .my-*
+   - Spacing: .m-{0-5}, .mt-*, .mb-*, .ms-*, .me-*, .mx-*, .my-*, .p-{0-5}, .pt-*, etc.
+   - Display: .d-none, .d-block, .d-inline, .d-flex, .d-grid
+   - Flexbox: .flex-row, .flex-column, .justify-content-*, .align-items-*
+   - Sizing: .w-{25|50|75|100}, .h-{25|50|75|100}, .mw-100, .vh-100
+   - Text: .text-{start|center|end}, .fw-bold, .fs-{1-6}, .text-decoration-none
+   - Colors: .bg-*, .text-*, .bg-opacity-*
+   - Position: .position-*, .float-start, .float-end
+   
+   The classes below are application-specific and cannot be replaced with Bootstrap utilities.
+   ============================================ */
 
 .w-inherit {
     width: inherit;
