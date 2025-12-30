@@ -119,10 +119,10 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
             <div id="pageMain" class="page">
                 <div class="panel panel-default">
                     <div class="panel-heading h-38">
-                        <div class="float-left">
+                        <div class="pull-left">
                             <h3 class="panel-title">DNS Server<span id="lblDnsServerDomain"></span></h3>
                         </div>
-                        <div class="float-right">
+                        <div class="pull-right">
                             <a href="#" data-toggle="modal" data-target="#modalUpdateAvailable" id="lnkUpdateAvailable" class="hidden text-danger-important">New Update Available!</a>
                         </div>
                     </div>
@@ -505,14 +505,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                         <div class="py-10">
                                             <h3 class="my-4"><span id="titleEditZone" class="mr-10">example.com</span><a href="#" onclick="showEditZone($('#titleEditZone').attr('data-zone'), $('#txtEditZonePageNumber').val(), $('#txtEditZoneFilterName').val(), $('#txtEditZoneFilterType').val()); return false;"><span aria-hidden="true" class="glyphicon glyphicon-refresh text-xl"></span></a></h3>
-                                            <div class="float-left">
+                                            <div class="pull-left">
                                                 <span id="titleEditZoneType" class="label label-default">Primary</span>
                                                 <span id="titleEditZoneDnssecStatus" class="label label-default">DNSSEC</span>
                                                 <span id="titleEditZoneStatus" class="label label-success">Enabled</span>
                                                 <span id="titleEditZoneCatalog" class="label label-default">catalog</span>
                                                 <div id="titleEditZoneExpiry" class="pt-4 text-xs-bold">Expiry: 01 Jan 2020 00:00:00</div>
                                             </div>
-                                            <div class="float-right py-2">
+                                            <div class="pull-right py-2">
                                                 <button id="btnEditZoneAddRecord" type="button" onclick="showAddRecordModal();" class="btn btn-primary btn-narrow">Add Record</button>
                                                 <button id="btnEnableZoneEditZone" type="button" onclick="enableZone(this);" class="btn btn-default btn-narrow">Enable Zone</button>
                                                 <button id="btnDisableZoneEditZone" type="button" onclick="disableZone(this);" class="btn btn-warning btn-narrow">Disable Zone</button>
@@ -761,7 +761,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                     <div id="divViewApps">
                                         <div class="form-inline">
-                                            <div class="float-right">
+                                            <div class="pull-right">
                                                 <button type="button" onclick="showStoreAppsModal();" class="btn btn-primary btn-narrow">App Store</button>
                                                 <button type="button" onclick="showInstallAppModal();" class="btn btn-primary btn-narrow">Install</button>
                                             </div>
@@ -2327,7 +2327,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
                                             <div id="divDhcpViewScopes" class="mt-10">
 
-                                                <div class="float-right py-2">
+                                                <div class="pull-right py-2">
                                                     <button type="button" onclick="showAddDhcpScope();" class="btn btn-primary btn-narrow">Add Scope</button>
                                                 </div>
                                                 <div class="clearfix"></div>
@@ -2778,7 +2778,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <div id="divAdminUsersLoader" class="mt-10 h-350"></div>
 
                                             <div id="divAdminUsersView" class="mt-10">
-                                                <div class="float-right py-2">
+                                                <div class="pull-right py-2">
                                                     <button type="button" onclick="showAddUserModal();" class="btn btn-primary btn-narrow">Add User</button>
                                                 </div>
 
@@ -2809,7 +2809,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                             <div id="divAdminGroupsLoader" class="mt-10 h-350"></div>
 
                                             <div id="divAdminGroupsView" class="mt-10">
-                                                <div class="float-right py-2">
+                                                <div class="pull-right py-2">
                                                     <button type="button" onclick="showAddGroupModal();" class="btn btn-primary btn-narrow">Add Group</button>
                                                 </div>
 
@@ -2927,7 +2927,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
                                                 <div class="panel panel-default">
                                                     <div class="panel-heading panel-head-sm">
                                                         <div id="txtLogViewerTitle" class="p-4">20171012</div>
-                                                        <div class="float-right">
+                                                        <div class="pull-right">
                                                             <button type="button" data-loading-text="Download" onclick="downloadLog();" class="btn btn-default text-sm p-4-6">Download</button>
                                                             <button id="btnDeleteLog" type="button" data-loading-text="Delete" onclick="deleteLog();" class="btn btn-danger text-sm p-4-6">Delete</button>
                                                         </div>
